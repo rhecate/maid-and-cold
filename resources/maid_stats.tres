@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="MaidStats" load_steps=2 format=3 uid="uid://ig8kcppjsu8b"]
+
+[ext_resource type="Script" uid="uid://ckahvmbb8l2o0" path="res://scripts/maid_stats.gd" id="1_6l2kh"]
+
+[resource]
+script = ExtResource("1_6l2kh")
+metadata/_custom_type_script = "uid://ckahvmbb8l2o0"

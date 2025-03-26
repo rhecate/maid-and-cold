@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://ch6y18rwmd3fw"]
+
+[ext_resource type="Script" uid="uid://blujfm5ysbns0" path="res://scripts/toy_area.gd" id="1_mr56r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_je8e4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gamqn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ed7jo"]
+
+[node name="toy" type="Node2D"]
+script = ExtResource("1_mr56r")
+
+[node name="warm" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="warm"]
+scale = Vector2(5.31854, 5.31854)
+shape = SubResource("CircleShape2D_je8e4")
+
+[node name="hot" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hot"]
+scale = Vector2(3.10248, 3.10248)
+shape = SubResource("CircleShape2D_gamqn")
+
+[node name="boiling" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boiling"]
+scale = Vector2(0.535547, 0.535547)
+shape = SubResource("CircleShape2D_ed7jo")
+
+[connection signal="body_entered" from="warm" to="." method="_on_warm_body_entered"]
+[connection signal="body_exited" from="warm" to="." method="_on_warm_body_exited"]
+[connection signal="body_entered" from="hot" to="." method="_on_hot_body_entered"]
+[connection signal="body_exited" from="hot" to="." method="_on_hot_body_exited"]
+[connection signal="body_entered" from="boiling" to="." method="_on_boiling_body_entered"]
+[connection signal="body_exited" from="boiling" to="." method="_on_boiling_body_exited"]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://bjiwn255sl2hg"]
+
+[ext_resource type="Script" uid="uid://cv3seynvjnybu" path="res://scripts/ui.gd" id="1_srplv"]
+[ext_resource type="PackedScene" uid="uid://bdvo28hwqagsq" path="res://resources/dig_time.tscn" id="2_x4jx1"]
+[ext_resource type="Resource" uid="uid://bvc5nayg28xx1" path="res://resources/item_list.tres" id="2_yev5y"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_srplv")
+item_list = ExtResource("2_yev5y")
+
+[node name="Time Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 13.0
+offset_right = 55.0
+offset_bottom = 72.0
+theme_override_font_sizes/font_size = 20
+text = "15
+"
+
+[node name="Timer" type="Timer" parent="Time Label"]
+wait_time = 15.0
+
+[node name="Item Count" type="Label" parent="."]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 13.0
+offset_right = 278.0
+offset_bottom = 90.0
+theme_override_font_sizes/font_size = 20
+text = "1"
+
+[node name="Warmth" type="Label" parent="."]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 198.0
+offset_right = 121.0
+offset_bottom = 231.0
+theme_override_font_sizes/font_size = 10
+text = "nope"
+horizontal_alignment = 1
+text_overrun_behavior = 2
+
+[node name="Game Over" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 35.0
+offset_top = 71.0
+offset_right = 227.0
+offset_bottom = 168.0
+theme_override_font_sizes/font_size = 30
+text = "FINISH!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dig Time" parent="." instance=ExtResource("2_x4jx1")]
+visible = false
+layout_mode = 0
+offset_left = 19.0
+offset_top = 12.0
+offset_right = 238.0
+offset_bottom = 220.0
+
+[node name="Dig Time" parent="Dig Time" index="0"]
+theme_override_font_sizes/font_size = 20
+
+[node name="Item Name" parent="Dig Time" index="1"]
+theme_override_font_sizes/font_size = 15
+
+[node name="Item Depth" parent="Dig Time" index="2"]
+theme_override_font_sizes/font_size = 20
+
+[editable path="Dig Time"]

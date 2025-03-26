@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bdvo28hwqagsq"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+offset_left = 454.0
+offset_top = 162.0
+offset_right = 673.0
+offset_bottom = 370.0
+alignment = 1
+
+[node name="Dig Time" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Dig Time !!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item Name" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "name"
+horizontal_alignment = 1
+
+[node name="Item Depth" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "20"
+horizontal_alignment = 1
