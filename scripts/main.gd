@@ -3,7 +3,7 @@ extends Node2D
 @onready var toy_scene = preload("res://scenes/toy area.tscn")
 @onready var screenSize = get_viewport().get_visible_rect().size
 var toy
-var item_depth
+var item_depth: int = 0
 
 var warm : bool = false
 var hot : bool = false
@@ -14,13 +14,14 @@ var boiling : bool = false
 var bonus_time : bool = false
 
 @onready var ui = $CanvasLayer/Control
+@onready var item_count_label = $"CanvasLayer/Control/Item Count"
 @onready var timer = $"CanvasLayer/Control/Time Label/Timer"
+@onready var time_label = $"CanvasLayer/Control/Time Label"
 @onready var game_over = $"CanvasLayer/Control/Game Over"
 @onready var warmth_status = $"CanvasLayer/Control/Warmth"
 @onready var dig_time = $"CanvasLayer/Control/Dig Time"
 
 func _ready() -> void:
-	spawn_toy()
 	SignalBus.is_warm.connect(_on_is_warm)
 	SignalBus.is_hot.connect(_on_is_hot)
 	SignalBus.is_boiling.connect(_on_is_boiling)
@@ -28,7 +29,15 @@ func _ready() -> void:
 	SignalBus.isnt_hot.connect(_on_isnt_hot)
 	SignalBus.isnt_boiling.connect(_on_isnt_boiling)
 	SignalBus.found_item.connect(_on_found_item)
+	SignalBus.play_the_game.connect(_on_play_the_game)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_finished) 
 
+func _on_play_the_game() -> void:
+		spawn_toy()
+		time_label.visible = true
+		item_count_label.visible = true
+		timer.start()
+		maid.minigame_time = true
 
 func _on_maid_is_digging() -> void:
 	if boiling == true:
@@ -103,8 +112,16 @@ func spawn_toy():
 	toy.position = Vector2(rndX, rndY)
 
 func _on_timer_timeout() -> void:
+	maid.set_physics_process(false)
 	game_over.visible = true
-	get_tree().paused = true
+	maid.minigame_time = false
+	time_label.visible = false
+	item_count_label.visible = false
+	toy.queue_free()
+	await get_tree().create_timer(1.0).timeout
+	game_over.visible = false
+	maid.set_physics_process(true)
+
 
 func _on_found_item():
 	ui.link_to_item(ui.item_list.items.pick_random())
@@ -139,3 +156,6 @@ func _on_maid_digging_item() -> void:
 		maid.set_physics_process(true)
 			
 		spawn_toy()
+
+func _on_dialogue_finished(_dialogue_resource):
+	maid.set_physics_process(true)

@@ -17,7 +17,6 @@ var linked_item : Item
 
 func _ready() -> void:
 	warmth_label.visible = false
-	timer.start()
 	
 func _process(delta: float) -> void:
 	update_timer_label()
