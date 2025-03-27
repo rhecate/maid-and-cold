@@ -113,11 +113,14 @@ func spawn_toy():
 
 func _on_timer_timeout() -> void:
 	maid.set_physics_process(false)
+	if get_tree().get_root().has_node("Main/toy"):
+		toy.queue_free()
 	game_over.visible = true
 	maid.minigame_time = false
 	time_label.visible = false
 	item_count_label.visible = false
-	toy.queue_free()
+	dig_time.visible = false
+	maid.digging_time = false
 	await get_tree().create_timer(1.0).timeout
 	game_over.visible = false
 	maid.set_physics_process(true)
