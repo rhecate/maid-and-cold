@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="Item_List" load_steps=6 format=3 uid="uid://bvc5nayg28xx1"]
 
 [ext_resource type="Script" uid="uid://4tighqao7j10" path="res://scripts/items.gd" id="1_ecu0m"]
-[ext_resource type="Resource" uid="uid://cud70t7i770xc" path="res://resources/items/small_item.tres" id="2_f3jax"]
+[ext_resource type="Resource" uid="uid://bw655f70ysbm" path="res://resources/items/candy_wrapper.tres" id="2_f3jax"]
 [ext_resource type="Script" uid="uid://bl2hn0no3tp7o" path="res://scripts/item_list.gd" id="2_ov6tx"]
-[ext_resource type="Resource" uid="uid://c546ngbhq01qr" path="res://resources/items/medium_item.tres" id="3_27p1x"]
-[ext_resource type="Resource" uid="uid://cb5v7e0134mfo" path="res://resources/items/large_item.tres" id="4_2qtsl"]
+[ext_resource type="Resource" uid="uid://besaenqux3eck" path="res://resources/items/old_coin.tres" id="3_27p1x"]
+[ext_resource type="Resource" uid="uid://bbxr26hqs3x4s" path="res://resources/items/wooden_calf.tres" id="4_2qtsl"]
 
 [resource]
 script = ExtResource("2_ov6tx")
-items = Array[ExtResource("1_ecu0m")]([ExtResource("2_f3jax"), ExtResource("3_27p1x"), ExtResource("4_2qtsl")])
+items = Array[ExtResource("1_ecu0m")]([ExtResource("2_f3jax"), ExtResource("3_27p1x"), ExtResource("4_2qtsl"), null, null, null, null, null, null, null])
 metadata/_custom_type_script = "uid://bl2hn0no3tp7o"
