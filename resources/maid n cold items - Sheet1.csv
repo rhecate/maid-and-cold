@@ -1,4 +1,4 @@
-file_name,item_id,item_name,depth,points
+file_name,id,name,depth,points
 wooden_calf,0,wooden calf,10,5
 old_coin,1,old coin,20,10
 candy_wrapper,2,candy wrapper,5,1

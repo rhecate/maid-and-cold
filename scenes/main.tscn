@@ -25,7 +25,7 @@ scale = Vector2(0.2, 0.2)
 visible = false
 
 [node name="Timer" parent="CanvasLayer/Control/Time Label" index="0"]
-wait_time = 5.0
+wait_time = 60.0
 one_shot = true
 
 [node name="Item Count" parent="CanvasLayer/Control" index="1"]

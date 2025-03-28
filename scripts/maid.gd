@@ -20,7 +20,7 @@ var angle = 0
 
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if minigame_time == false:
 		if Input.is_action_just_pressed("ACTION"):
 			var actionables = actionable_finder.get_overlapping_areas()

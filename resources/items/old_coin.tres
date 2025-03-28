@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_7eq2a")
-name = ""
-id = 0
-depth = 20
-points = 10
+name = "old coin"
+id = 1.0
+depth = 20.0
+points = 10.0

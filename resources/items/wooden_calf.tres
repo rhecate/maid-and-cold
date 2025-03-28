@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_a284j")
-name = ""
+name = "wooden calf"
 id = 0
-depth = 10
-points = 5
+depth = 10.0
+points = 5.0

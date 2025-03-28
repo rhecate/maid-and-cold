@@ -6,10 +6,10 @@ uid="uid://f67au3auww36"
 
 [deps]
 
-files=["res://resources/maid n cold items - Sheet1.item.translation", "res://resources/maid n cold items - Sheet1.item.translation", "res://resources/maid n cold items - Sheet1.depth.translation", "res://resources/maid n cold items - Sheet1.points.translation"]
+files=["res://resources/maid n cold items - Sheet1.id.translation", "res://resources/maid n cold items - Sheet1.name.translation", "res://resources/maid n cold items - Sheet1.depth.translation", "res://resources/maid n cold items - Sheet1.points.translation"]
 
 source_file="res://resources/maid n cold items - Sheet1.csv"
-dest_files=["res://resources/maid n cold items - Sheet1.item.translation", "res://resources/maid n cold items - Sheet1.item.translation", "res://resources/maid n cold items - Sheet1.depth.translation", "res://resources/maid n cold items - Sheet1.points.translation"]
+dest_files=["res://resources/maid n cold items - Sheet1.id.translation", "res://resources/maid n cold items - Sheet1.name.translation", "res://resources/maid n cold items - Sheet1.depth.translation", "res://resources/maid n cold items - Sheet1.points.translation"]
 
 [params]
 
