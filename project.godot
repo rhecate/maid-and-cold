@@ -8,6 +8,19 @@
 
 config_version=5
 
+[addons]
+
+resources_spreadsheet_view/array_color_tint=100.0
+resources_spreadsheet_view/color_rows=true
+resources_spreadsheet_view/array_min_width=128.0
+resources_spreadsheet_view/resource_preview_size=32.0
+resources_spreadsheet_view/clip_headers=false
+resources_spreadsheet_view/dupe_arrays=true
+resources_spreadsheet_view/context_menu_on_leftclick=false
+resources_spreadsheet_view/fold_docks=true
+resources_spreadsheet_view/resource_cell_label_mode=1
+resources_spreadsheet_view/freeze_first_column=true
+
 [application]
 
 config/name="maid hot n cold"
@@ -24,6 +37,10 @@ DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 gdscript/warnings/unused_signal=0
 
+[dialogue_manager]
+
+runtime/balloon_path="res://dialogue/balloon/balloon.tscn"
+
 [display]
 
 window/size/viewport_width=256
@@ -35,7 +52,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg")
 
 [input]
 

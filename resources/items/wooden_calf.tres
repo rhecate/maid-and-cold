@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bbxr26hqs3x4s"]
+
+[ext_resource type="Script" uid="uid://4tighqao7j10" path="res://scripts/items.gd" id="1_a284j"]
+
+[resource]
+script = ExtResource("1_a284j")
+name = ""
+id = 0
+depth = 10
+points = 5

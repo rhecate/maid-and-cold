@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="Items" load_steps=2 format=3 uid="uid://b0nl4k5yycvo"]
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://b0nl4k5yycvo"]
 
 [ext_resource type="Script" uid="uid://4tighqao7j10" path="res://scripts/items.gd" id="1_r8j1i"]
 
 [resource]
 script = ExtResource("1_r8j1i")
+name = ""
+id = 0
+depth = 0
+points = 0
 metadata/_custom_type_script = "uid://4tighqao7j10"
