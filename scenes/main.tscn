@@ -13,6 +13,7 @@ script = ExtResource("1_bisa2")
 position = Vector2(6.00001, 59)
 
 [node name="Maid" parent="." instance=ExtResource("1_88gup")]
+y_sort_enabled = true
 position = Vector2(96, 120)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
