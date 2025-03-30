@@ -15,7 +15,6 @@ speed = 100
 
 [node name="Master" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(6.00001, 59)
-scale = Vector2(0.2, 0.2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
