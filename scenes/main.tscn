@@ -9,12 +9,11 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_bisa2")
 
-[node name="Maid" parent="." instance=ExtResource("1_88gup")]
-position = Vector2(96, 120)
-speed = 100
-
 [node name="Master" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(6.00001, 59)
+
+[node name="Maid" parent="." instance=ExtResource("1_88gup")]
+position = Vector2(96, 120)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

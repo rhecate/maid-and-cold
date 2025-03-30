@@ -159,20 +159,21 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h0s5p"]
-radius = 0.634518
-height = 1.77665
+radius = 0.380711
+height = 1.26904
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h0s5p"]
 
 [node name="Maid" type="CharacterBody2D"]
 script = ExtResource("1_nnbcx")
+speed = 100
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jp5yk")
-animation = &"walk4"
+animation = &"walk2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(0, 5)
 scale = Vector2(7.88, 7.88)
 shape = SubResource("CapsuleShape2D_h0s5p")
 

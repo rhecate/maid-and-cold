@@ -5,9 +5,9 @@
 [ext_resource type="Resource" uid="uid://bk3cnhsa76u7j" path="res://dialogue/dialogue.dialogue" id="3_rnotf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aynem"]
-size = Vector2(27.2347, 35.4655)
+size = Vector2(4.64227, 13.4266)
 
-[node name="Master" type="Node2D"]
+[node name="Master" type="StaticBody2D"]
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_rnotf")
@@ -16,6 +16,11 @@ texture = ExtResource("1_rnotf")
 dialogue_resource = ExtResource("3_rnotf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
-position = Vector2(-3, 56.6432)
+position = Vector2(-1, 18)
+scale = Vector2(6.46233, 1.54273)
+shape = SubResource("RectangleShape2D_aynem")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 18)
 scale = Vector2(6.46233, 1.54273)
 shape = SubResource("RectangleShape2D_aynem")
