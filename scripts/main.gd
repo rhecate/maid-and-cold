@@ -2,6 +2,12 @@ extends Node2D
 
 @onready var toy_scene = preload("res://scenes/toy area.tscn")
 @onready var screenSize = get_viewport().get_visible_rect().size
+@onready var spawn_zone = $"Room/Toy Spawn Zone"
+@onready var roomspace = $Room/RoomArea/CollisionShape2D
+@onready var roomsize = roomspace.shape.get_rect().size.abs()
+@onready var roomorigin = roomspace.position
+
+
 var toy
 var item_depth: int = 0
 
@@ -12,6 +18,7 @@ var boiling : bool = false
 @onready var maid = $Maid
 @onready var maid_timer = $Maid/Timer
 var bonus_time : bool = false
+
 
 @onready var ui = $CanvasLayer/Control
 @onready var item_count_label = $"CanvasLayer/Control/Item Count"
@@ -107,9 +114,17 @@ func spawn_toy():
 	toy = toy_scene.instantiate()
 	add_child(toy)
 	var rng = RandomNumberGenerator.new()
-	var rndX = rng.randi_range(0, screenSize.x)
-	var rndY = rng.randi_range(0, screenSize.y)
+	var rndX = rng.randf_range(roomorigin.x, roomsize.x)
+	var rndY = rng.randf_range(roomorigin.y, roomsize.y)
 	toy.position = Vector2(rndX, rndY)
+	await get_tree().create_timer(0.05).timeout
+	if $Room.in_spawn_zone == false:
+		print("redo spawn")
+		toy.queue_free()
+		spawn_toy()
+	else:
+		print("its in the right spot")
+		return
 
 func _on_timer_timeout() -> void:
 	maid.set_physics_process(false)
