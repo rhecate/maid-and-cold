@@ -17,6 +17,7 @@ var boiling : bool = false
 
 @onready var maid = $Maid
 @onready var maid_timer = $Maid/Timer
+@onready var animaid = $Maid/AnimatedSprite2D
 var bonus_time : bool = false
 
 
@@ -53,6 +54,7 @@ func _on_maid_is_digging() -> void:
 		SignalBus.found_item.emit()
 		
 		maid.set_physics_process(false)
+		animaid.play("dig")
 		print("there it is")
 		warmth_status.visible = true
 		ui.warmth_update("there it is")
@@ -167,10 +169,11 @@ func _on_maid_digging_item() -> void:
 				
 		maid_timer.start()
 		bonus_time = true
-		
+		animaid.play("get")
 		dig_time.visible = false
 		maid.digging_time = false
 		await get_tree().create_timer(0.5).timeout
+		
 		maid.set_physics_process(true)
 			
 		spawn_toy()
