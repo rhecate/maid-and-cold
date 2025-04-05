@@ -68,6 +68,7 @@ func _on_maid_is_digging() -> void:
 		warmth_status.visible = true
 		ui.warmth_update("ooh almost")
 		maid.set_physics_process(false)
+		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout
 		maid.set_physics_process(true)
 		warmth_status.visible = false
@@ -76,6 +77,7 @@ func _on_maid_is_digging() -> void:
 		warmth_status.visible = true
 		ui.warmth_update("oh maybe..")
 		maid.set_physics_process(false)
+		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout
 		maid.set_physics_process(true)
 		warmth_status.visible = false
@@ -84,6 +86,7 @@ func _on_maid_is_digging() -> void:
 		warmth_status.visible = true
 		ui.warmth_update("nope")
 		maid.set_physics_process(false)
+		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout
 		maid.set_physics_process(true)
 		warmth_status.visible = false
