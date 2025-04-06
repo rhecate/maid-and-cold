@@ -5,3 +5,4 @@ class_name Item
 @export var id : int
 @export var depth : int
 @export var points : int
+@export var description : String

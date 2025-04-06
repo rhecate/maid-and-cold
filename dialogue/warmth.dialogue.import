@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://eadqai2656hi"
+path="res://.godot/imported/warmth.dialogue-4538acf8be8a32a650a921dae7883f02.tres"
+
+[deps]
+
+source_file="res://dialogue/warmth.dialogue"
+dest_files=["res://.godot/imported/warmth.dialogue-4538acf8be8a32a650a921dae7883f02.tres"]
+
+[params]
+
+defaults=true

@@ -1,8 +1,8 @@
 ~ start
-Master Palace: hey fillie
-Master Palace: clean this shit up
-- yes
-	Master Palace: well get to it
+Master Palace: Fillie.
+Master Palace: Clean this shit up.
+- yes master
+	Master Palace: Good.
 	do SignalBus.emit_play_the_game()
 - no
 	Master Palace: ok. whatever

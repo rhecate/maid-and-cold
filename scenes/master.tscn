@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dmwgf3fpnfigc"]
 
-[ext_resource type="Texture2D" uid="uid://bpx1c3olmo8dw" path="res://assets/the master.png" id="1_rnotf"]
+[ext_resource type="Texture2D" path="res://assets/the master.png" id="1_rnotf"]
 [ext_resource type="PackedScene" uid="uid://3b6rxph166u7" path="res://scenes/actionable.tscn" id="2_jooxx"]
 [ext_resource type="Resource" uid="uid://bk3cnhsa76u7j" path="res://dialogue/dialogue.dialogue" id="3_rnotf"]
 

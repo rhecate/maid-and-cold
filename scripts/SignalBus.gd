@@ -13,5 +13,6 @@ signal bonus_time
 
 signal play_the_game
 
+
 func emit_play_the_game():
 	play_the_game.emit()

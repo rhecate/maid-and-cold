@@ -7,6 +7,9 @@ extends Node2D
 @onready var roomsize = roomspace.shape.get_rect().size
 @onready var roomorigin = roomspace.global_position - roomsize
 
+@export var warmth_dialogue: DialogueResource
+@onready var warmth_balloon = preload("res://dialogue/balloon/warmth balloon.tscn")
+
 
 var toy
 var item_depth: int = 0
@@ -57,7 +60,8 @@ func _on_maid_is_digging() -> void:
 		animaid.play("dig")
 		print("there it is")
 		warmth_status.visible = true
-		ui.warmth_update("there it is")
+		#ui.warmth_update("there it is")
+		DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "boiling")
 		
 		await get_tree().create_timer(0.5).timeout
 		
@@ -66,7 +70,8 @@ func _on_maid_is_digging() -> void:
 	elif boiling == false and hot == true:
 		print("ooh almost")
 		warmth_status.visible = true
-		ui.warmth_update("ooh almost")
+		#ui.warmth_update("ooh almost")
+		DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "hot")
 		maid.set_physics_process(false)
 		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout
@@ -75,7 +80,8 @@ func _on_maid_is_digging() -> void:
 	elif boiling == false and hot == false and warm == true:
 		print("oh maybe..")
 		warmth_status.visible = true
-		ui.warmth_update("oh maybe..")
+		#ui.warmth_update("oh maybe..")
+		DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "warm")
 		maid.set_physics_process(false)
 		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout
@@ -84,16 +90,14 @@ func _on_maid_is_digging() -> void:
 	elif boiling == false and hot == false and warm == false:
 		print("nope")
 		warmth_status.visible = true
-		ui.warmth_update("nope")
+		#ui.warmth_update("nope")
+		DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "cold")
 		maid.set_physics_process(false)
 		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout
 		maid.set_physics_process(true)
 		warmth_status.visible = false
 	
-	if ui.item_count == 8:
-		game_over.visible = true
-		get_tree().paused = true
 		
 		
 
@@ -132,18 +136,7 @@ func spawn_toy():
 		return
 
 func _on_timer_timeout() -> void:
-	maid.set_physics_process(false)
-	if get_tree().get_root().has_node("Main/toy"):
-		toy.queue_free()
-	game_over.visible = true
-	maid.minigame_time = false
-	time_label.visible = false
-	item_count_label.visible = false
-	dig_time.visible = false
-	maid.digging_time = false
-	await get_tree().create_timer(1.0).timeout
-	game_over.visible = false
-	maid.set_physics_process(true)
+	end_minigame()
 
 
 func _on_found_item():
@@ -162,9 +155,6 @@ func _on_maid_digging_item() -> void:
 	ui.dig_depth.text = str(item_depth)
 	if item_depth <= 0:
 
-		if bonus_time == true:
-			timer.start(timer.time_left + 5.0)
-			
 		ui.item_count += 1
 		
 		if ui.item_count == 4:
@@ -182,7 +172,42 @@ func _on_maid_digging_item() -> void:
 		if get_tree().get_root().has_node("Main/toy"):
 			return
 		else:
-			spawn_toy()
+			
+			if ui.item_count == 8:
+				end_minigame()
+
+			else:
+				if bonus_time == true:
+					timer.start(timer.time_left + 5.0)
+				
+				if ui.item_count == 4:
+					timer.start(timer.time_left + 10.0)
+			
+			
+				maid_timer.start()
+				bonus_time = true
+		
+				dig_time.visible = false
+				maid.digging_time = false
+				await get_tree().create_timer(0.5).timeout
+				maid.set_physics_process(true)
+			
+
+				spawn_toy()
 
 func _on_dialogue_finished(_dialogue_resource):
+	maid.set_physics_process(true)
+	
+func end_minigame() -> void:
+	maid.set_physics_process(false)
+	if get_tree().get_root().has_node("Main/toy"):
+		toy.queue_free()
+	game_over.visible = true
+	maid.minigame_time = false
+	maid.digging_time = false
+	dig_time.visible = false
+	await get_tree().create_timer(1.0).timeout
+	time_label.visible = false
+	item_count_label.visible = false
+	game_over.visible = false
 	maid.set_physics_process(true)

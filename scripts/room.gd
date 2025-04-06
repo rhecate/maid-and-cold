@@ -17,12 +17,9 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		railing.z_index = 1
 		#print(railing.z_index)
 
-
-func _on_toy_spawn_zone_area_shape_entered(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_toy_spawn_zone_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	if area.is_in_group("toy"):
 		in_spawn_zone = true
-	
 
-
-func _on_toy_spawn_zone_area_shape_exited(area_rid: RID, area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
+func _on_toy_spawn_zone_area_shape_exited(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	in_spawn_zone = false

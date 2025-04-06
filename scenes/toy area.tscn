@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://blujfm5ysbns0" path="res://scripts/toy_area.gd" id="1_mr56r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_je8e4"]
+radius = 14.6765
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gamqn"]
 
