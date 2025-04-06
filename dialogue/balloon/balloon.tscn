@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bddfe17shqbn"]
+[gd_scene load_steps=11 format=3 uid="uid://bddfe17shqbn"]
 
 [ext_resource type="Script" uid="uid://bkuqnv4fb37ux" path="res://dialogue/balloon/balloon.gd" id="1_s2gbs"]
+[ext_resource type="FontFile" uid="uid://dyrdo8dbwgaec" path="res://assets/fonts/lookout_7_v1/Lookout 7.ttf" id="2_5xxl0"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_hfvdi"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_1j1j0"]
 
@@ -84,7 +85,8 @@ shadow_color = Color(0.15, 0.15, 0.15, 0.666667)
 shadow_offset = Vector2(2, 3)
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
-default_font_size = 8
+default_font = ExtResource("2_5xxl0")
+default_font_size = 16
 Button/styles/disabled = SubResource("StyleBoxFlat_235ry")
 Button/styles/focus = SubResource("StyleBoxFlat_ufjut")
 Button/styles/hover = SubResource("StyleBoxFlat_fcbqo")

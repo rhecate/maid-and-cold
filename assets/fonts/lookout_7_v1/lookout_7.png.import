@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dj8xdwuy6mbkt"
-path="res://.godot/imported/maidfinal-Sheet.png-06ff0ca72a0a4f2a99f0412c030b8f8d.ctex"
+uid="uid://o32joqe6n0ss"
+path="res://.godot/imported/lookout_7.png-3d4f62d6b09b8a954c9666063254a2a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/maidfinal-Sheet.png"
-dest_files=["res://.godot/imported/maidfinal-Sheet.png-06ff0ca72a0a4f2a99f0412c030b8f8d.ctex"]
+source_file="res://assets/fonts/lookout_7_v1/lookout_7.png"
+dest_files=["res://.godot/imported/lookout_7.png-3d4f62d6b09b8a954c9666063254a2a8.ctex"]
 
 [params]
 

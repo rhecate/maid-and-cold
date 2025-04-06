@@ -1,0 +1,35 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://dyrdo8dbwgaec"
+path="res://.godot/imported/Lookout 7.ttf-9f2044f7ed96e32d5545e2dc269a6709.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/lookout_7_v1/Lookout 7.ttf"
+dest_files=["res://.godot/imported/Lookout 7.ttf-9f2044f7ed96e32d5545e2dc269a6709.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=0
+generate_mipmaps=false
+disable_embedded_bitmaps=true
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=4
+keep_rounding_remainders=true
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

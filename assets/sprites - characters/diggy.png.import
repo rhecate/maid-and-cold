@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s2e3vs84v5ak"
-path="res://.godot/imported/banister.png-4d845fe7fb6274fc7f70a6384541f51e.ctex"
+uid="uid://ceq84tduxll5k"
+path="res://.godot/imported/diggy.png-7568b64bfef6baf23102a8636058fb9c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/banister.png"
-dest_files=["res://.godot/imported/banister.png-4d845fe7fb6274fc7f70a6384541f51e.ctex"]
+source_file="res://assets/sprites - characters/diggy.png"
+dest_files=["res://.godot/imported/diggy.png-7568b64bfef6baf23102a8636058fb9c.ctex"]
 
 [params]
 
