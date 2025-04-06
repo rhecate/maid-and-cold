@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://bdvo28hwqagsq"]
+[gd_scene format=3 uid="uid://bdvo28hwqagsq"]
 
 [node name="VBoxContainer" type="VBoxContainer"]
 offset_left = 454.0

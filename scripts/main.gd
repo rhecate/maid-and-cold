@@ -175,7 +175,7 @@ func _on_maid_digging_item() -> void:
 		animaid.play("get")
 		dig_time.visible = false
 		maid.digging_time = false
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(.75).timeout
 		
 		maid.set_physics_process(true)
 			
