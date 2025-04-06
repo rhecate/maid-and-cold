@@ -4,8 +4,8 @@ extends Node2D
 @onready var screenSize = get_viewport().get_visible_rect().size
 @onready var spawn_zone = $"Room/Toy Spawn Zone"
 @onready var roomspace = $Room/RoomArea/CollisionShape2D
-@onready var roomsize = roomspace.shape.get_rect().size.abs()
-@onready var roomorigin = roomspace.position
+@onready var roomsize = roomspace.shape.get_rect().size
+@onready var roomorigin = roomspace.global_position - roomsize
 
 
 var toy
@@ -179,7 +179,10 @@ func _on_maid_digging_item() -> void:
 		
 		maid.set_physics_process(true)
 			
-		spawn_toy()
+		if get_tree().get_root().has_node("Main/toy"):
+			return
+		else:
+			spawn_toy()
 
 func _on_dialogue_finished(_dialogue_resource):
 	maid.set_physics_process(true)

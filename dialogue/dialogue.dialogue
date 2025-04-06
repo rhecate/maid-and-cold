@@ -1,9 +1,9 @@
 ~ start
-Master: hey bitch
-Master: wanna play?
+Master Palace: hey fillie
+Master Palace: clean this shit up
 - yes
-	Master: lets fucking go
+	Master Palace: well get to it
 	do SignalBus.emit_play_the_game()
 - no
-	Master: ok. whatever
+	Master Palace: ok. whatever
 => END

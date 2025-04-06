@@ -1,9 +1,9 @@
 [gd_scene load_steps=28 format=4 uid="uid://wiukdtsljhbm"]
 
 [ext_resource type="Script" uid="uid://d17v152dnbxlt" path="res://scripts/room.gd" id="1_14vil"]
-[ext_resource type="Texture2D" uid="uid://h72r5ue2nikg" path="res://assets/tileset.png" id="1_36trf"]
-[ext_resource type="Texture2D" uid="uid://c4r5ya47d7ph2" path="res://assets/tileset2.png" id="2_ffxv4"]
-[ext_resource type="Texture2D" uid="uid://s2e3vs84v5ak" path="res://assets/banister.png" id="3_85yof"]
+[ext_resource type="Texture2D" uid="uid://h72r5ue2nikg" path="res://assets/sprites - bg/tileset.png" id="1_36trf"]
+[ext_resource type="Texture2D" uid="uid://c4r5ya47d7ph2" path="res://assets/sprites - bg/tileset2.png" id="2_ffxv4"]
+[ext_resource type="Texture2D" uid="uid://s2e3vs84v5ak" path="res://assets/sprites - bg/banister.png" id="3_85yof"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_85yof"]
 polygon = PackedVector2Array(-8, -8, -6.14393, -8, -6.04484, -0.396382, -1.58553, -0.198191, -1.28824, -8, 0.495478, -8, 0.990956, -0.594574, 6.44122, 0.0990963, 5.74755, -8, 8, -8, 8, 8, 6.44122, 8, 5.74755, 1.38734, 0.891861, 1.09005, 0.594574, 8, -1.38734, 8, -1.18915, 1.68463, -5.84665, 0.990957, -6.34212, 8, -8, 8)
@@ -548,7 +548,7 @@ size = Vector2(160, 20)
 size = Vector2(96, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7dqbv"]
-size = Vector2(269, 504)
+size = Vector2(268, 504)
 
 [node name="Room" type="Node2D"]
 script = ExtResource("1_14vil")
@@ -611,7 +611,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoomArea"]
-position = Vector2(-0.5, 138)
+position = Vector2(0, 138)
 shape = SubResource("RectangleShape2D_7dqbv")
 
 [node name="Toy Spawn Zone" type="Area2D" parent="."]
@@ -619,7 +619,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Toy Spawn Zone"]
-polygon = PackedVector2Array(-126, -31, -74, -32, -73, -46, -27, -47, -26, -29, 9, -26, 10, -45, 59, -45, 59, -28, 123, -28, 125, 109, 28, 108, 30, 225, 125, 227, 126, 334, 42, 332, 45, 380, -122, 380, -124, 226, -95, 226, -95, 308, -72, 308, -71, 177, -122, 179, -122, 118, -48, 115, -48, 174, -56, 179, -57, 309, -36, 306, -37, 223, -26, 222, -29, 104, -124, 103)
+polygon = PackedVector2Array(-126, -31, -74, -32, -73, -46, -27, -47, -26, -29, 9, -26, 10, -45, 59, -45, 59, -28, 123, -28, 125, 109, 28, 108, 30, 225, 125, 227, 126, 334, 42, 332, 45, 380, -122, 380, -124, 226, -95, 226, -95, 308, -72, 308, -72, 173, -120, 169, -121, 122, -48, 121, -49, 171, -56, 172, -57, 309, -36, 306, -37, 223, -26, 222, -27, 96, -123, 96)
 
 [connection signal="body_entered" from="ZIndex Changer" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="ZIndex Changer" to="." method="_on_area_2d_body_exited"]
