@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bkuqnv4fb37ux" path="res://dialogue/balloon/balloon.gd" id="1_0sm38"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_4v1y6"]
-[ext_resource type="Texture2D" uid="uid://d3f7t205v44l5" path="res://assets/icon.svg" id="2_aoena"]
+[ext_resource type="Texture2D" uid="uid://bpx1c3olmo8dw" path="res://assets/sprites - characters/the master.png" id="3_4v1y6"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_aoena"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_235ry"]
@@ -130,23 +130,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 24.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Balloon/Panel/Dialogue"]
-layout_mode = 2
-theme_override_constants/separation = 5
-
-[node name="TextureRect" type="TextureRect" parent="Balloon/Panel/Dialogue/HBoxContainer"]
-layout_mode = 2
-texture = ExtResource("2_aoena")
-expand_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Balloon/Panel/Dialogue"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer"]
+[node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/VBoxContainer"]
 unique_name_in_owner = true
 visible = false
 modulate = Color(1, 1, 1, 0.501961)
@@ -157,11 +149,23 @@ text = "Character"
 fit_content = true
 scroll_active = false
 
-[node name="DialogueLabel" parent="Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer" instance=ExtResource("2_4v1y6")]
+[node name="DialogueLabel" parent="Balloon/Panel/Dialogue/VBoxContainer" instance=ExtResource("2_4v1y6")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 text = "Dialogue..."
+
+[node name="TextureRect" type="TextureRect" parent="Balloon"]
+clip_contents = true
+custom_minimum_size = Vector2(15, 0)
+layout_mode = 2
+offset_left = 57.0
+offset_top = 192.0
+offset_right = 84.0
+offset_bottom = 219.0
+texture = ExtResource("3_4v1y6")
+expand_mode = 1
+stretch_mode = 2
 
 [node name="Responses" type="MarginContainer" parent="Balloon"]
 visible = false

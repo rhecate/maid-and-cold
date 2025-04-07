@@ -1,17 +1,14 @@
+~ start
 ~ cold
-while SignalBus.dig_time == 1
 	not even close
 => END
 ~ warm
-while SignalBus.dig_time == 1
 	hmm perhaps
 => END
 ~ hot
-while SignalBus.dig_time == 1
 	oho.. oh yes..
 => END
 ~ boiling
-while SignalBus.dig_time == 1
 	there it IS!!!
 => END
 => END

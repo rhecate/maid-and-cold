@@ -60,8 +60,8 @@ func _on_maid_is_digging() -> void:
 		animaid.play("dig")
 		print("there it is")
 		warmth_status.visible = true
-		#ui.warmth_update("there it is")
-		DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "boiling")
+		ui.warmth_update("there it is")
+		#DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "boiling")
 		
 		await get_tree().create_timer(0.5).timeout
 		
@@ -70,8 +70,8 @@ func _on_maid_is_digging() -> void:
 	elif boiling == false and hot == true:
 		print("ooh almost")
 		warmth_status.visible = true
-		#ui.warmth_update("ooh almost")
-		DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "hot")
+		ui.warmth_update("ooh almost")
+		#DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "hot")
 		maid.set_physics_process(false)
 		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout
@@ -80,8 +80,8 @@ func _on_maid_is_digging() -> void:
 	elif boiling == false and hot == false and warm == true:
 		print("oh maybe..")
 		warmth_status.visible = true
-		#ui.warmth_update("oh maybe..")
-		DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "warm")
+		ui.warmth_update("oh maybe..")
+		#DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "warm")
 		maid.set_physics_process(false)
 		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout
@@ -90,10 +90,11 @@ func _on_maid_is_digging() -> void:
 	elif boiling == false and hot == false and warm == false:
 		print("nope")
 		warmth_status.visible = true
-		#ui.warmth_update("nope")
-		DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "cold")
+		ui.warmth_update("nope")
+
 		maid.set_physics_process(false)
 		animaid.play("dig")
+		DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "cold")
 		await get_tree().create_timer(maid.cooldown).timeout
 		maid.set_physics_process(true)
 		warmth_status.visible = false
