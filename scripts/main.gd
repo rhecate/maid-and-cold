@@ -84,7 +84,6 @@ func _on_maid_is_digging() -> void:
 		print("nope")
 		warmth_status.visible = true
 		ui.warmth_update("nope")
-
 		maid.set_physics_process(false)
 		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout

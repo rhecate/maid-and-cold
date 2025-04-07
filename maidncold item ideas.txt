@@ -16,11 +16,11 @@ start:
 	the bored master commands the maid to search for an item he has lost
 		- this is his bedroom and its messy as fuck
 		- she will have to spend a long time digging through all of his shit
-		- he will not tell her what she's looking for. he'll let her know when 		  		  she finds it.
+		- he will not tell her what she's looking for. he'll let her know when she finds it.
 	
 	why is his room messy when there are maids?
-		- he has been doing things he wants kept private and has not allowed the 		 	  maids to enter his room for several days
-		- he is not done with this private task, but he can't find an item 		  		  necessary to continue with it
+		- he has been doing things he wants kept private and has not allowed the maids to enter his room for several days
+		- he is not done with this private task, but he can't find an item necessary to continue with it
 		- for some reason, fillie is the one maid he will allow inside
 	
 	
@@ -53,4 +53,15 @@ the master:
 ~   UI to DO  ~
 ~~~~~~~~~~~~~~~
 	- indicate cutscene is happening with vignette bars at top and bottom
-	- small dialogue box popup with palace's face to indicate warmth level
+	- number popup of how much dig damage you're doing 
+
+accumulate points through minigame
+
+use points to learn about the master
+	- ask a question
+	- observe
+	- affection
+
+when you end the minigame with < 2 items found receive a punishment from the master
+
+time limit of 14 days (1 minigame round = 1 day)
