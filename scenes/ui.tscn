@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjiwn255sl2hg"]
+[gd_scene load_steps=8 format=3 uid="uid://bjiwn255sl2hg"]
 
 [ext_resource type="Script" uid="uid://cv3seynvjnybu" path="res://scripts/ui.gd" id="1_srplv"]
 [ext_resource type="PackedScene" uid="uid://bdvo28hwqagsq" path="res://scenes/dig_time.tscn" id="2_x4jx1"]
 [ext_resource type="Resource" uid="uid://bvc5nayg28xx1" path="res://resources/item_list.tres" id="2_yev5y"]
+[ext_resource type="FontFile" uid="uid://dyrdo8dbwgaec" path="res://assets/fonts/lookout_7_v1/Lookout 7.ttf" id="4_gdt2y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gdt2y"]
+font = ExtResource("4_gdt2y")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wm3ai"]
+font = ExtResource("4_gdt2y")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8dubc"]
+font = ExtResource("4_gdt2y")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -48,12 +58,11 @@ horizontal_alignment = 1
 text_overrun_behavior = 2
 
 [node name="Game Over" type="Label" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 35.0
-offset_top = 71.0
+offset_top = 126.0
 offset_right = 227.0
-offset_bottom = 168.0
+offset_bottom = 223.0
 theme_override_font_sizes/font_size = 30
 text = "FINISH!"
 horizontal_alignment = 1
@@ -75,5 +84,47 @@ theme_override_font_sizes/font_size = 15
 
 [node name="Item Depth" parent="Dig Time" index="2"]
 theme_override_font_sizes/font_size = 20
+
+[node name="Found Items" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 55.0
+offset_top = 58.0
+offset_right = 198.0
+offset_bottom = 108.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Found Items"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 120.0
+offset_bottom = 42.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Found Items/MarginContainer"]
+layout_mode = 2
+
+[node name="HBox2" type="HBoxContainer" parent="Found Items/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="Found Items/MarginContainer/VBoxContainer/HBox2"]
+layout_mode = 2
+text = "you found:"
+label_settings = SubResource("LabelSettings_gdt2y")
+
+[node name="HBox" type="HBoxContainer" parent="Found Items/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 2
+
+[node name="Item Name Label" type="Label" parent="Found Items/MarginContainer/VBoxContainer/HBox"]
+layout_mode = 2
+text = "item name:"
+label_settings = SubResource("LabelSettings_wm3ai")
+
+[node name="Item Points Label" type="Label" parent="Found Items/MarginContainer/VBoxContainer/HBox"]
+layout_mode = 2
+text = "10"
+label_settings = SubResource("LabelSettings_8dubc")
+horizontal_alignment = 2
 
 [editable path="Dig Time"]

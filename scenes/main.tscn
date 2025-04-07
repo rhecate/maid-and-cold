@@ -1,15 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dresjlxwqlxkx"]
+[gd_scene load_steps=6 format=3 uid="uid://dresjlxwqlxkx"]
 
 [ext_resource type="PackedScene" uid="uid://dkk7wmldv8pa0" path="res://scenes/maid.tscn" id="1_88gup"]
 [ext_resource type="Script" uid="uid://15ss4u2euebk" path="res://scripts/main.gd" id="1_bisa2"]
-[ext_resource type="Resource" uid="uid://eadqai2656hi" path="res://dialogue/warmth.dialogue" id="2_tefeu"]
 [ext_resource type="PackedScene" uid="uid://bjiwn255sl2hg" path="res://scenes/ui.tscn" id="3_85yof"]
 [ext_resource type="PackedScene" uid="uid://dmwgf3fpnfigc" path="res://scenes/master.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://wiukdtsljhbm" path="res://scenes/room.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_bisa2")
-warmth_dialogue = ExtResource("2_tefeu")
 
 [node name="Master" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(132, 61)
@@ -32,7 +30,7 @@ metadata/_edit_use_anchors_ = true
 visible = false
 
 [node name="Timer" parent="CanvasLayer/Control/Time Label" index="0"]
-wait_time = 60.0
+wait_time = 10.0
 one_shot = true
 
 [node name="Item Count" parent="CanvasLayer/Control" index="1"]

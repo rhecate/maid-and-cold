@@ -6,24 +6,9 @@ extends Node2D
 @onready var roomspace = $Room/RoomArea/CollisionShape2D
 @onready var roomsize = roomspace.shape.get_rect().size
 @onready var roomorigin = roomspace.global_position - roomsize
-
-@export var warmth_dialogue: DialogueResource
-@onready var warmth_balloon = preload("res://dialogue/balloon/warmth balloon.tscn")
-
-
-var toy
-var item_depth: int = 0
-
-var warm : bool = false
-var hot : bool = false
-var boiling : bool = false
-
 @onready var maid = $Maid
 @onready var maid_timer = $Maid/Timer
 @onready var animaid = $Maid/AnimatedSprite2D
-var bonus_time : bool = false
-
-
 @onready var ui = $CanvasLayer/Control
 @onready var item_count_label = $"CanvasLayer/Control/Item Count"
 @onready var timer = $"CanvasLayer/Control/Time Label/Timer"
@@ -31,6 +16,19 @@ var bonus_time : bool = false
 @onready var game_over = $"CanvasLayer/Control/Game Over"
 @onready var warmth_status = $"CanvasLayer/Control/Warmth"
 @onready var dig_time = $"CanvasLayer/Control/Dig Time"
+@onready var found_items = $"CanvasLayer/Control/Found Items"
+@onready var found_item_name = $"CanvasLayer/Control/Found Items/MarginContainer/VBoxContainer/HBox/Item Name Label"
+@onready var found_item_points = $"CanvasLayer/Control/Found Items/MarginContainer/VBoxContainer/HBox/Item Points Label"
+
+var toy
+var item_depth: int = 0
+var warm : bool = false
+var hot : bool = false
+var boiling : bool = false
+var bonus_time : bool = false
+var gotten_items : Dictionary = {}
+var item_name : String
+var item_points : int
 
 func _ready() -> void:
 	SignalBus.is_warm.connect(_on_is_warm)
@@ -43,12 +41,8 @@ func _ready() -> void:
 	SignalBus.play_the_game.connect(_on_play_the_game)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_finished) 
 
-func _on_play_the_game() -> void:
-		spawn_toy()
-		time_label.visible = true
-		item_count_label.visible = true
-		timer.start()
-		maid.minigame_time = true
+
+
 
 func _on_maid_is_digging() -> void:
 	if boiling == true:
@@ -61,7 +55,6 @@ func _on_maid_is_digging() -> void:
 		print("there it is")
 		warmth_status.visible = true
 		ui.warmth_update("there it is")
-		#DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "boiling")
 		
 		await get_tree().create_timer(0.5).timeout
 		
@@ -71,7 +64,6 @@ func _on_maid_is_digging() -> void:
 		print("ooh almost")
 		warmth_status.visible = true
 		ui.warmth_update("ooh almost")
-		#DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "hot")
 		maid.set_physics_process(false)
 		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout
@@ -81,7 +73,6 @@ func _on_maid_is_digging() -> void:
 		print("oh maybe..")
 		warmth_status.visible = true
 		ui.warmth_update("oh maybe..")
-		#DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "warm")
 		maid.set_physics_process(false)
 		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout
@@ -94,7 +85,6 @@ func _on_maid_is_digging() -> void:
 
 		maid.set_physics_process(false)
 		animaid.play("dig")
-		DialogueManager.show_dialogue_balloon_scene(warmth_balloon, warmth_dialogue, "cold")
 		await get_tree().create_timer(maid.cooldown).timeout
 		maid.set_physics_process(true)
 		warmth_status.visible = false
@@ -102,23 +92,6 @@ func _on_maid_is_digging() -> void:
 		
 		
 
-func _on_is_warm():
-	warm = true
-	
-func _on_is_hot():
-	hot = true
-
-func _on_is_boiling():
-	boiling = true
-	
-func _on_isnt_warm():
-	warm = false
-
-func _on_isnt_hot():
-	hot = false
-
-func _on_isnt_boiling():
-	boiling = false
 
 func spawn_toy():
 	toy = toy_scene.instantiate()
@@ -136,18 +109,7 @@ func spawn_toy():
 		print("its in the right spot")
 		return
 
-func _on_timer_timeout() -> void:
-	end_minigame()
 
-
-func _on_found_item():
-	ui.link_to_item(ui.item_list.items.pick_random())
-	item_depth = ui.linked_item.depth
-	dig_time.visible = true
-	maid.digging_time = true
-
-func _on_maid_timer_timeout() -> void:
-	bonus_time = false
 
 
 func _on_maid_digging_item() -> void:
@@ -158,15 +120,13 @@ func _on_maid_digging_item() -> void:
 
 		ui.item_count += 1
 		
-		if ui.item_count == 4:
-				timer.start(timer.time_left + 10.0)
-				
-		maid_timer.start()
-		bonus_time = true
+		gotten_items[ui.linked_item.name] = ui.linked_item.points
+		print(gotten_items)
+		
 		animaid.play("get")
 		dig_time.visible = false
 		maid.digging_time = false
-		await get_tree().create_timer(.75).timeout
+		await get_tree().create_timer(0.75).timeout
 		
 		maid.set_physics_process(true)
 			
@@ -196,8 +156,7 @@ func _on_maid_digging_item() -> void:
 
 				spawn_toy()
 
-func _on_dialogue_finished(_dialogue_resource):
-	maid.set_physics_process(true)
+
 	
 func end_minigame() -> void:
 	maid.set_physics_process(false)
@@ -207,8 +166,61 @@ func end_minigame() -> void:
 	maid.minigame_time = false
 	maid.digging_time = false
 	dig_time.visible = false
-	await get_tree().create_timer(1.0).timeout
+	
+	for item in gotten_items:
+		found_item_name.text = item
+		found_item_points.text = str(gotten_items[item])
+		found_items.visible = true
+		await get_tree().create_timer(1.0).timeout
+		found_items.visible = false
+		await get_tree().create_timer(0.5).timeout
+	
+	await get_tree().create_timer(0.5).timeout
 	time_label.visible = false
 	item_count_label.visible = false
 	game_over.visible = false
 	maid.set_physics_process(true)
+	
+	
+func _on_play_the_game() -> void:
+		spawn_toy()
+		time_label.visible = true
+		item_count_label.visible = true
+		timer.start()
+		maid.minigame_time = true
+	
+func _on_is_warm():
+	warm = true
+	
+func _on_is_hot():
+	hot = true
+
+func _on_is_boiling():
+	boiling = true
+	
+func _on_isnt_warm():
+	warm = false
+
+func _on_isnt_hot():
+	hot = false
+
+func _on_isnt_boiling():
+	boiling = false
+
+func _on_dialogue_finished(_dialogue_resource):
+	maid.set_physics_process(true)
+	
+	
+func _on_maid_timer_timeout() -> void:
+	bonus_time = false
+	
+	
+func _on_timer_timeout() -> void:
+	end_minigame()
+
+
+func _on_found_item():
+	ui.link_to_item(ui.item_list.items.pick_random())
+	item_depth = ui.linked_item.depth
+	dig_time.visible = true
+	maid.digging_time = true
