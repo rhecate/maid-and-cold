@@ -4,11 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://bdvo28hwqagsq" path="res://scenes/dig_time.tscn" id="2_x4jx1"]
 [ext_resource type="Resource" uid="uid://bvc5nayg28xx1" path="res://resources/item_list.tres" id="2_yev5y"]
 [ext_resource type="FontFile" uid="uid://dyrdo8dbwgaec" path="res://assets/fonts/lookout_7_v1/Lookout 7.ttf" id="4_gdt2y"]
+[ext_resource type="LabelSettings" uid="uid://lwqxwifxd0a0" path="res://scenes/default label setting.tres" id="5_wm3ai"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gdt2y"]
-font = ExtResource("4_gdt2y")
-
-[sub_resource type="LabelSettings" id="LabelSettings_wm3ai"]
 font = ExtResource("4_gdt2y")
 
 [sub_resource type="LabelSettings" id="LabelSettings_8dubc"]
@@ -120,7 +118,7 @@ alignment = 2
 [node name="Item Name Label" type="Label" parent="Found Items/MarginContainer/VBoxContainer/HBox"]
 layout_mode = 2
 text = "item name:"
-label_settings = SubResource("LabelSettings_wm3ai")
+label_settings = ExtResource("5_wm3ai")
 
 [node name="Item Points Label" type="Label" parent="Found Items/MarginContainer/VBoxContainer/HBox"]
 layout_mode = 2

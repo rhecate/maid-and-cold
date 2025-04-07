@@ -49,10 +49,9 @@ the master:
 
 - comments about the maid's boyish frame
 
-~~~~~~~~~~
-~   UI   ~
-~~~~~~~~~~
+~~~~~~~~~~~~~~~
+~   UI to DO  ~
+~~~~~~~~~~~~~~~
 	- indicate cutscene is happening with vignette bars at top and bottom
 	- small dialogue box popup with palace's face to indicate warmth level
-	- list of items you found shows up at the end of the round
 	- number popup of how much dig damage you're doing 

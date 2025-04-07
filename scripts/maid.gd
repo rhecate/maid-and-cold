@@ -6,6 +6,7 @@ signal digging_item
 
 @onready var direction = $Direction
 @onready var actionable_finder = $Direction/ActionableFinder
+@onready var dig_number_label = $"Dig Power"
 
 var minigame_time = false
 var digging_time = false
@@ -18,6 +19,8 @@ var angle = 0
 @export var cooldown = 0.5
 @export var dig_power = 2
 
+func _ready() -> void:
+	dig_number_label.text = str(dig_power)
 
 
 func _unhandled_input(_event: InputEvent) -> void:

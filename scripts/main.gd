@@ -8,6 +8,7 @@ extends Node2D
 @onready var roomorigin = roomspace.global_position - roomsize
 @onready var maid = $Maid
 @onready var maid_timer = $Maid/Timer
+@onready var maid_animation = $Maid/AnimationPlayer
 @onready var animaid = $Maid/AnimatedSprite2D
 @onready var ui = $CanvasLayer/Control
 @onready var item_count_label = $"CanvasLayer/Control/Item Count"
@@ -19,6 +20,7 @@ extends Node2D
 @onready var found_items = $"CanvasLayer/Control/Found Items"
 @onready var found_item_name = $"CanvasLayer/Control/Found Items/MarginContainer/VBoxContainer/HBox/Item Name Label"
 @onready var found_item_points = $"CanvasLayer/Control/Found Items/MarginContainer/VBoxContainer/HBox/Item Points Label"
+
 
 var toy
 var item_depth: int = 0
@@ -116,7 +118,9 @@ func _on_maid_digging_item() -> void:
 	
 	item_depth -= maid.dig_power
 	ui.dig_depth.text = str(item_depth)
-	if item_depth <= 0:
+	if item_depth >= 0:
+		maid_animation.play("damage number")
+	else:
 
 		ui.item_count += 1
 		

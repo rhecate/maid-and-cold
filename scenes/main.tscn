@@ -17,10 +17,6 @@ y_sort_enabled = true
 position = Vector2(222, 122)
 speed = 150
 
-[node name="AnimatedSprite2D" parent="Maid" index="0"]
-frame = 0
-frame_progress = 0.0
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource("3_85yof")]
