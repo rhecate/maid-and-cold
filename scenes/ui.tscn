@@ -71,9 +71,10 @@ vertical_alignment = 1
 visible = false
 layout_mode = 0
 offset_left = 19.0
-offset_top = 12.0
+offset_top = 68.0
 offset_right = 238.0
-offset_bottom = 220.0
+offset_bottom = 276.0
+theme_override_constants/separation = -8
 
 [node name="Dig Time" parent="Dig Time" index="0"]
 theme_override_font_sizes/font_size = 20

@@ -54,4 +54,3 @@ the master:
 ~~~~~~~~~~~~~~~
 	- indicate cutscene is happening with vignette bars at top and bottom
 	- small dialogue box popup with palace's face to indicate warmth level
-	- number popup of how much dig damage you're doing 
