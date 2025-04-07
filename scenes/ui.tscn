@@ -58,6 +58,7 @@ horizontal_alignment = 1
 text_overrun_behavior = 2
 
 [node name="Game Over" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 35.0
 offset_top = 126.0
