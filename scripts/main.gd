@@ -20,7 +20,7 @@ extends Node2D
 @onready var found_items = $"CanvasLayer/Control/Found Items"
 @onready var found_item_name = $"CanvasLayer/Control/Found Items/MarginContainer/VBoxContainer/HBox/Item Name Label"
 @onready var found_item_points = $"CanvasLayer/Control/Found Items/MarginContainer/VBoxContainer/HBox/Item Points Label"
-
+@onready var dark_screen = $CanvasLayer/ColorRect
 
 var toy
 var item_depth: int = 0
@@ -103,9 +103,12 @@ func spawn_toy():
 	toy.position = Vector2(rndX, rndY)
 	await get_tree().create_timer(0.05).timeout
 	if $Room.in_spawn_zone == false:
-		print("redo spawn")
-		toy.queue_free()
-		spawn_toy()
+		if Input.is_action_just_pressed("CANCEL"):
+			return
+		else: 
+			print("redo spawn")
+			toy.queue_free()
+			spawn_toy()
 	else:
 		print("its in the right spot")
 		return
@@ -123,6 +126,8 @@ func _on_maid_digging_item() -> void:
 
 		ui.item_count += 1
 		
+		
+		# NEED TO FIX THIS - DOESNT APPEND TO A LIST JUST ADDS THE ITEM PROPERTIES
 		gotten_items[ui.linked_item.name] = ui.linked_item.points
 		print(gotten_items)
 		
@@ -162,6 +167,11 @@ func _on_maid_digging_item() -> void:
 
 	
 func end_minigame() -> void:
+	dark_screen.visible = true
+	var tween = create_tween()
+	
+	tween.tween_property(dark_screen, "color:a", 0.25, 0.5)
+	
 	maid.set_physics_process(false)
 	if get_tree().get_root().has_node("Main/toy"):
 		toy.queue_free()
@@ -170,15 +180,20 @@ func end_minigame() -> void:
 	maid.digging_time = false
 	dig_time.visible = false
 	
-	for item in gotten_items:
-		found_item_name.text = item
-		found_item_points.text = str(gotten_items[item])
-		found_items.visible = true
-		await get_tree().create_timer(1.0).timeout
-		found_items.visible = false
-		await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(2.0).timeout
 	
-	await get_tree().create_timer(0.5).timeout
+	if gotten_items.size() >= 0:
+
+		for item in gotten_items:
+			found_item_name.text = item
+			found_item_points.text = str(gotten_items[item])
+			found_items.visible = true
+			await get_tree().create_timer(1.0).timeout
+			found_items.visible = false
+			await get_tree().create_timer(1.0).timeout
+	
+	await get_tree().create_timer(2.0).timeout
+	dark_screen.visible = false
 	time_label.visible = false
 	item_count_label.visible = false
 	game_over.visible = false
@@ -227,3 +242,7 @@ func _on_found_item():
 	item_depth = ui.linked_item.depth
 	dig_time.visible = true
 	maid.digging_time = true
+
+
+func _on_call_it_off() -> void:
+	end_minigame()

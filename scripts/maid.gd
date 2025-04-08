@@ -3,6 +3,7 @@ class_name Maid
 
 signal is_digging
 signal digging_item
+signal call_it_off
 
 @onready var direction = $Direction
 @onready var actionable_finder = $Direction/ActionableFinder
@@ -39,7 +40,17 @@ func _unhandled_input(_event: InputEvent) -> void:
 	
 		if Input.is_action_just_pressed("ACTION"):
 			emit_signal("digging_item")
-		
+			return
+
+func _input(event: InputEvent) -> void:
+	if minigame_time == true:
+	
+		if Input.is_action_just_pressed("CANCEL"):
+			emit_signal("call_it_off")
+			return
+	
+	else:
+		return
 
 func _physics_process(_delta):
 	current_animation = "walk"
