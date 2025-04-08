@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://f67au3auww36"
+
+[deps]
+
+files=["res://resources/items/maid n cold items - Sheet1.id.translation", "res://resources/items/maid n cold items - Sheet1.name.translation", "res://resources/items/maid n cold items - Sheet1.depth.translation", "res://resources/items/maid n cold items - Sheet1.points.translation"]
+
+source_file="res://resources/items/maid n cold items - Sheet1.csv"
+dest_files=["res://resources/items/maid n cold items - Sheet1.id.translation", "res://resources/items/maid n cold items - Sheet1.name.translation", "res://resources/items/maid n cold items - Sheet1.depth.translation", "res://resources/items/maid n cold items - Sheet1.points.translation"]
+
+[params]
+
+compress=true
+delimiter=0
