@@ -53,7 +53,6 @@ the master:
 ~   UI to DO  ~
 ~~~~~~~~~~~~~~~
 	- indicate cutscene is happening with vignette bars at top and bottom
-	- number popup of how much dig damage you're doing 
 
 accumulate points through minigame
 
@@ -64,4 +63,4 @@ use points to learn about the master
 
 when you end the minigame with < 2 items found receive a punishment from the master
 
-time limit of 14 days (1 minigame round = 1 day)
+time limit of 7 days (1 minigame round = 1 day)
