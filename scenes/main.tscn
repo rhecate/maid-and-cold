@@ -16,6 +16,7 @@ position = Vector2(132, 61)
 y_sort_enabled = true
 position = Vector2(222, 122)
 speed = 150
+cooldown = 0.2
 
 [node name="Dig Power" parent="Maid" index="5"]
 offset_left = 9.0
