@@ -3,4 +3,6 @@
 [ext_resource type="FontFile" uid="uid://dyrdo8dbwgaec" path="res://assets/fonts/lookout_7_v1/Lookout 7.ttf" id="1_lxxdc"]
 
 [resource]
+line_spacing = -4.0
 font = ExtResource("1_lxxdc")
+font_color = Color(0.7, 0.238, 0.238, 1)

@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=3 uid="uid://dwko7e3ltvscn"]
+
+[ext_resource type="Texture2D" uid="uid://bktjkwv8x5x75" path="res://assets/sprites - ui/textbox_big.png" id="1_sicog"]
+[ext_resource type="LabelSettings" uid="uid://lwqxwifxd0a0" path="res://scenes/default label setting.tres" id="2_ohimt"]
+[ext_resource type="Texture2D" uid="uid://dxsj5s5aly8e3" path="res://assets/sprites - characters/palace-portraits.png" id="3_e8ixg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0fey"]
+bg_color = Color(0.890196, 0.713726, 0.588235, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.764706, 0.505882, 0.145098, 1)
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g3k4"]
+atlas = ExtResource("3_e8ixg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dua4f"]
+atlas = ExtResource("3_e8ixg")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w30g8"]
+atlas = ExtResource("3_e8ixg")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycy06"]
+atlas = ExtResource("3_e8ixg")
+region = Rect2(48, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yib36"]
+atlas = ExtResource("3_e8ixg")
+region = Rect2(48, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tmvws"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g3k4")
+}],
+"loop": true,
+"name": &"cant be helped",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dua4f")
+}],
+"loop": true,
+"name": &"jovial",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w30g8")
+}],
+"loop": true,
+"name": &"joyous",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycy06")
+}],
+"loop": true,
+"name": &"mirthful",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yib36")
+}],
+"loop": true,
+"name": &"unamused",
+"speed": 5.0
+}]
+
+[node name="Warmth" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_right = 83.0
+offset_bottom = 24.0
+texture = ExtResource("1_sicog")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 192.0
+offset_bottom = 57.0
+scale = Vector2(0.5, 0.5)
+text = "What's up. This is a whole entire sentence. This is how much text I can fit in this bad boy. Sheesh."
+label_settings = ExtResource("2_ohimt")
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 5.0
+offset_top = -8.0
+offset_right = 45.0
+offset_bottom = 6.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r0fey")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, 22)
+sprite_frames = SubResource("SpriteFrames_tmvws")
+animation = &"mirthful"
