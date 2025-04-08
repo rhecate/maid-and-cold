@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://cih0nevr1bsr4"]
+
+[ext_resource type="Texture2D" uid="uid://b2f0xjckx222n" path="res://assets/sprites - ui/response_box.png" id="1_upcrb"]
+
+[resource]
+texture = ExtResource("1_upcrb")
+texture_margin_left = 9.0
+texture_margin_top = 10.0
+texture_margin_right = 44.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(0, 0, 90, 24)
