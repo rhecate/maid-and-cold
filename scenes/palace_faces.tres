@@ -1,0 +1,66 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://cw8q7f1rrbwor"]
+
+[ext_resource type="Texture2D" uid="uid://dxsj5s5aly8e3" path="res://assets/sprites - characters/palace-portraits.png" id="1_rrbmi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g3k4"]
+atlas = ExtResource("1_rrbmi")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dua4f"]
+atlas = ExtResource("1_rrbmi")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w30g8"]
+atlas = ExtResource("1_rrbmi")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycy06"]
+atlas = ExtResource("1_rrbmi")
+region = Rect2(48, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yib36"]
+atlas = ExtResource("1_rrbmi")
+region = Rect2(48, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g3k4")
+}],
+"loop": true,
+"name": &"cant be helped",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dua4f")
+}],
+"loop": true,
+"name": &"jovial",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w30g8")
+}],
+"loop": true,
+"name": &"joyous",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycy06")
+}],
+"loop": true,
+"name": &"mirthful",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yib36")
+}],
+"loop": true,
+"name": &"unamused",
+"speed": 5.0
+}]

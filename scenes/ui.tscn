@@ -129,7 +129,6 @@ label_settings = SubResource("LabelSettings_8dubc")
 horizontal_alignment = 2
 
 [node name="Warmth2" parent="." instance=ExtResource("6_8dubc")]
-visible = false
 offset_left = 17.0
 offset_top = 194.0
 offset_right = 57.0

@@ -31,6 +31,7 @@ var bonus_time : bool = false
 var gotten_items : Dictionary = {}
 var item_name : String
 var item_points : int
+var game_ending : bool = false
 
 func _ready() -> void:
 	SignalBus.is_warm.connect(_on_is_warm)
@@ -44,7 +45,15 @@ func _ready() -> void:
 	DialogueManager.dialogue_ended.connect(_on_dialogue_finished) 
 
 
+func _physics_process(delta: float) -> void:
+	
+	if game_ending == false:
+		return
 
+	if game_ending == true:
+		animaid.play("walk2")
+		maid.set_physics_process(false)
+		
 
 func _on_maid_is_digging() -> void:
 	if boiling == true:
@@ -121,7 +130,7 @@ func _on_maid_digging_item() -> void:
 	item_depth -= maid.dig_power
 	ui.dig_depth.text = str(item_depth)
 	if item_depth >= 0:
-		maid_animation.play("damage number")
+		maid_animation.play("damage_number")
 	else:
 
 		ui.item_count += 1
@@ -167,12 +176,13 @@ func _on_maid_digging_item() -> void:
 
 	
 func end_minigame() -> void:
+	game_ending = true
+	maid.set_physics_process(false)
 	dark_screen.visible = true
 	var tween = create_tween()
 	
 	tween.tween_property(dark_screen, "color:a", 0.25, 0.5)
 	
-	maid.set_physics_process(false)
 	if get_tree().get_root().has_node("Main/toy"):
 		toy.queue_free()
 	game_over.visible = true
@@ -198,6 +208,7 @@ func end_minigame() -> void:
 	item_count_label.visible = false
 	game_over.visible = false
 	maid.set_physics_process(true)
+	game_ending = false
 	
 	
 func _on_play_the_game() -> void:
