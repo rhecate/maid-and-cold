@@ -49,11 +49,6 @@ the master:
 
 - comments about the maid's boyish frame
 
-~~~~~~~~~~~~~~~
-~   UI to DO  ~
-~~~~~~~~~~~~~~~
-	- indicate cutscene is happening with vignette bars at top and bottom
-
 accumulate points through minigame
 
 use points to learn about the master
@@ -64,3 +59,23 @@ use points to learn about the master
 when you end the minigame with < 2 items found receive a punishment from the master
 
 time limit of 7 days (1 minigame round = 1 day)
+
+
+
+~~~~~~~~~~~~~~~~~~~
+~      TO DO      ~
+~~~~~~~~~~~~~~~~~~~
+	- indicate cutscene is happening with vignette bars at top and bottom
+	- warmth balloon
+	- title screen
+	- opening scene
+	- save & load progress
+	- point accumulation
+	- dig power up
+
+
+	- reward scene framework
+	- punishment scene framework
+	- day counter
+	- ending scene
+	- add more items
