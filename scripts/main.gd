@@ -30,9 +30,12 @@ var hot : bool = false
 var boiling : bool = false
 var bonus_time : bool = false
 var gotten_items : Dictionary = {}
+var gotten_items_list = []
 var item_name : String
 var item_points : int
 var game_ending : bool = false
+
+
 
 func _ready() -> void:
 	SignalBus.is_warm.connect(_on_is_warm)
@@ -136,10 +139,11 @@ func _on_maid_digging_item() -> void:
 
 		ui.item_count += 1
 		
-		
 		# NEED TO FIX THIS - DOESNT APPEND TO A LIST JUST ADDS THE ITEM PROPERTIES
 		gotten_items[ui.linked_item.name] = ui.linked_item.points
 		print(gotten_items)
+		gotten_items_list.append(ui.linked_item.name)
+		print(gotten_items_list)
 		
 		animaid.play("get")
 		dig_time.visible = false
@@ -193,9 +197,9 @@ func end_minigame() -> void:
 	
 	await get_tree().create_timer(2.0).timeout
 	
-	if gotten_items.size() >= 0:
+	if gotten_items_list.size() >= 0:
 
-		for item in gotten_items:
+		for item in gotten_items_list:
 			found_item_name.text = item
 			found_item_points.text = str(gotten_items[item])
 			found_items.visible = true
@@ -203,7 +207,7 @@ func end_minigame() -> void:
 			found_items.visible = false
 			await get_tree().create_timer(1.0).timeout
 	
-	await get_tree().create_timer(2.0).timeout
+	await get_tree().create_timer(1.0).timeout
 	dark_screen.visible = false
 	time_label.visible = false
 	item_count_label.visible = false
