@@ -325,10 +325,10 @@ shape = SubResource("CircleShape2D_h0s5p")
 
 [node name="Dig Power" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
-offset_left = 22.0
-offset_top = -22.0
-offset_right = 37.0
-offset_bottom = -6.0
+offset_left = 9.0
+offset_top = -18.0
+offset_right = 24.0
+offset_bottom = -2.0
 text = "2"
 label_settings = ExtResource("4_1t7fq")
 

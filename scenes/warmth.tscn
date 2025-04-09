@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6yfhqe42kbe"]
+[gd_scene load_steps=5 format=3 uid="uid://b6yfhqe42kbe"]
 
 [ext_resource type="Texture2D" uid="uid://bavmiiu5e8ikp" path="res://assets/sprites - ui/textbox_small.png" id="1_7e6hm"]
+[ext_resource type="Script" uid="uid://h7t6ra8tko57" path="res://scenes/warmth.gd" id="1_y3385"]
 [ext_resource type="LabelSettings" uid="uid://lwqxwifxd0a0" path="res://scenes/default label setting.tres" id="2_y3385"]
 [ext_resource type="SpriteFrames" uid="uid://cw8q7f1rrbwor" path="res://scenes/palace_faces.tres" id="3_7e6hm"]
 
@@ -9,6 +10,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_y3385")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2

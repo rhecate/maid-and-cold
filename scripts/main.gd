@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var toy_scene = preload("res://scenes/toy area.tscn")
+@onready var warmth_balloon = preload("res://scenes/warmth.tscn")
 @onready var screenSize = get_viewport().get_visible_rect().size
 @onready var spawn_zone = $"Room/Toy Spawn Zone"
 @onready var roomspace = $Room/RoomArea/CollisionShape2D
