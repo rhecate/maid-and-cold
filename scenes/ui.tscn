@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bdvo28hwqagsq" path="res://scenes/dig_time.tscn" id="2_x4jx1"]
 [ext_resource type="Resource" uid="uid://bvc5nayg28xx1" path="res://resources/items/item_list.tres" id="2_yev5y"]
 [ext_resource type="FontFile" uid="uid://dyrdo8dbwgaec" path="res://assets/fonts/lookout_7_v1/Lookout 7.ttf" id="4_gdt2y"]
-[ext_resource type="LabelSettings" uid="uid://lwqxwifxd0a0" path="res://scenes/default label setting.tres" id="5_wm3ai"]
+[ext_resource type="LabelSettings" uid="uid://lwqxwifxd0a0" path="res://resources/default label setting.tres" id="5_wm3ai"]
 [ext_resource type="PackedScene" uid="uid://b6yfhqe42kbe" path="res://scenes/warmth.tscn" id="6_8dubc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gdt2y"]
