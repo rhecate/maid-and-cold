@@ -16,7 +16,7 @@ extends Node2D
 @onready var timer = $"CanvasLayer/Control/Time Label/Timer"
 @onready var time_label = $"CanvasLayer/Control/Time Label"
 @onready var game_over = $"CanvasLayer/Control/Game Over"
-@onready var warmth_status = $"CanvasLayer/Control/Warmth"
+@onready var warmth_status = $"CanvasLayer/Control/Warmth2"
 @onready var dig_time = $"CanvasLayer/Control/Dig Time"
 @onready var found_items = $"CanvasLayer/Control/Found Items"
 @onready var found_item_name = $"CanvasLayer/Control/Found Items/MarginContainer/VBoxContainer/HBox/Item Name Label"
@@ -69,7 +69,7 @@ func _on_maid_is_digging() -> void:
 		animaid.play("dig")
 		print("there it is")
 		warmth_status.visible = true
-		ui.warmth_update("there it is")
+		warmth_status.warmth_update("boiling")
 		
 		await get_tree().create_timer(0.5).timeout
 		
@@ -78,7 +78,7 @@ func _on_maid_is_digging() -> void:
 	elif boiling == false and hot == true:
 		print("ooh almost")
 		warmth_status.visible = true
-		ui.warmth_update("ooh almost")
+		warmth_status.warmth_update("hot")
 		maid.set_physics_process(false)
 		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout
@@ -87,7 +87,7 @@ func _on_maid_is_digging() -> void:
 	elif boiling == false and hot == false and warm == true:
 		print("oh maybe..")
 		warmth_status.visible = true
-		ui.warmth_update("oh maybe..")
+		warmth_status.warmth_update("warm")
 		maid.set_physics_process(false)
 		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout
@@ -96,7 +96,7 @@ func _on_maid_is_digging() -> void:
 	elif boiling == false and hot == false and warm == false:
 		print("nope")
 		warmth_status.visible = true
-		ui.warmth_update("nope")
+		warmth_status.warmth_update("cold")
 		maid.set_physics_process(false)
 		animaid.play("dig")
 		await get_tree().create_timer(maid.cooldown).timeout

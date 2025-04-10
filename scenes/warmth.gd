@@ -1,14 +1,22 @@
 extends Control
 
-@onready var texturerect = $TextureRect
+@onready var master = $Sprite2D
 @onready var label = $Label
 
+@export var warmth_text = {
+	"cold" : "No.",
+	"warm" : "Perhaps..",
+	"hot" : "Ooh, maybe...",
+	"boiling" : "There it is!!"
+}
 
-#take warmth as input, set label.text to corresponding value
-#also set texturerect region to change expression
+@export var warmth_face = {
+	"cold" : "unamused",
+	"warm" : "jovial",
+	"hot" : "mirthful",
+	"boiling" : "joyous"
+}
 
-#dictionary { "texture" : , "text" : "" }
-
-#func set_texture
-
-#func set_text
+func warmth_update(warmth : String):
+	label.text = warmth_text[warmth]
+	master.play(warmth_face[warmth])

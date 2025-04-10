@@ -31,4 +31,4 @@ label_settings = ExtResource("2_y3385")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(14, 13)
 sprite_frames = ExtResource("3_7e6hm")
-animation = &"mirthful"
+animation = &"jovial"
