@@ -1,0 +1,17 @@
+intro:
+	establishes relationship between palace and fillie
+	explains what the minigame task is 
+	gives reasoning to why you're doing this task
+
+7 day limit - 3 rounds per day
+get points every round
+60 seconds to find a maximum of 8 items
+1-25 points per item - 200 potential maximum points per round
+
+700 points for a positive scene with palace ?
+
+punishment scene if you end several rounds with 0 items found
+
+end:
+	time's up. did you find the true item?
+	did you get closer to palace?

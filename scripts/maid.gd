@@ -16,7 +16,7 @@ var current_animation : String
 
 var angle = 0
 
-@export var speed = 50
+@export var speed = 150
 @export var cooldown = 0.5
 @export var dig_power = 2
 
