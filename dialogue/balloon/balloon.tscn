@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_hfvdi"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_1j1j0"]
 [ext_resource type="StyleBox" uid="uid://bn7ueva43be4i" path="res://resources/stylebox/dialogue_box.tres" id="3_t3c2s"]
-[ext_resource type="SpriteFrames" uid="uid://cw8q7f1rrbwor" path="res://scenes/palace_faces.tres" id="6_tkmol"]
+[ext_resource type="SpriteFrames" uid="uid://cw8q7f1rrbwor" path="res://resources/palace_faces.tres" id="6_tkmol"]
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100

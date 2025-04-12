@@ -3,7 +3,7 @@ class_name SaveGame
 
 const SAVE_GAME_PATH := "user://savegame.tres"
 
-@export var character_stats : Resource
+@export var maid_stats : MaidStats = MaidStats.new()
 
 
 func write_savegame() -> void:

@@ -30,7 +30,7 @@ var hot : bool = false
 var boiling : bool = false
 var bonus_time : bool = false
 var gotten_items : Dictionary = {}
-var gotten_items_list = []
+var gotten_items_list := []
 var item_name : String
 var item_points : int
 var game_ending : bool = false
@@ -139,18 +139,19 @@ func _on_maid_digging_item() -> void:
 
 		ui.item_count += 1
 		
-		# NEED TO FIX THIS - DOESNT APPEND TO A LIST JUST ADDS THE ITEM PROPERTIES
 		gotten_items[ui.linked_item.name] = ui.linked_item.points
 		print(gotten_items)
 		gotten_items_list.append(ui.linked_item.name)
 		print(gotten_items_list)
 		
+		found_item_name.text = ui.linked_item.name
+		found_item_points.text = str(ui.linked_item.points)
+		found_items.visible = true
+		
 		animaid.play("get")
 		dig_time.visible = false
 		maid.digging_time = false
-		await get_tree().create_timer(0.75).timeout
-		
-		maid.set_physics_process(true)
+		await get_tree().create_timer(0.75)
 			
 		if get_tree().get_root().has_node("Main/toy"):
 			return
@@ -169,14 +170,15 @@ func _on_maid_digging_item() -> void:
 			
 				maid_timer.start()
 				bonus_time = true
-		
+				spawn_toy()
 				dig_time.visible = false
 				maid.digging_time = false
 				await get_tree().create_timer(0.5).timeout
 				maid.set_physics_process(true)
-			
+				found_items.visible = false
 
-				spawn_toy()
+
+				
 
 
 	
@@ -212,6 +214,7 @@ func end_minigame() -> void:
 	time_label.visible = false
 	item_count_label.visible = false
 	game_over.visible = false
+	gotten_items_list.clear()
 	maid.set_physics_process(true)
 	game_ending = false
 	
