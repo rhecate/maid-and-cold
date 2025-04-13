@@ -1,6 +1,7 @@
 extends Control
 
 @onready var main = "res://scenes/main.tscn"
+@onready var intro = "res://scenes/intro_scene.tscn"
 
 var _save : SaveGame
 
@@ -18,7 +19,7 @@ func _on_new_game_pressed() -> void:
 	
 		await get_tree().create_timer(1.0)
 	
-		get_tree().change_scene_to_file(main)
+		get_tree().change_scene_to_file(intro)
 
 	
 func _on_load_game_pressed() -> void:
@@ -40,7 +41,7 @@ func _on_save_exists_yes_pressed() -> void:
 	_save.write_savegame()
 	await get_tree().create_timer(1.0)
 	
-	get_tree().change_scene_to_file(main)
+	get_tree().change_scene_to_file(intro)
 	print(_save.maid_stats.dig_power)
 
 func _on_save_exists_no_pressed() -> void:

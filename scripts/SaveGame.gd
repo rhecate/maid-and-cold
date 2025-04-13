@@ -4,6 +4,7 @@ class_name SaveGame
 const SAVE_GAME_PATH := "user://savegame.tres"
 
 @export var maid_stats : MaidStats
+@export var saw_intro : bool = false
 
 func write_savegame() -> void:
 	ResourceSaver.save(self, SAVE_GAME_PATH)

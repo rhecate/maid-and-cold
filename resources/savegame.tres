@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_lhbgx")
+saw_intro = false
 metadata/_custom_type_script = "uid://dceq5h0mjp8ub"

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4uko3pw8b7mm"]
+
+[ext_resource type="Script" uid="uid://bu05ldtu4mwah" path="res://scenes/intro_scene.gd" id="1_0y5sa"]
+[ext_resource type="PackedScene" uid="uid://dresjlxwqlxkx" path="res://scenes/main.tscn" id="1_xmg1o"]
+
+[node name="IntroCutscene" type="Node2D"]
+script = ExtResource("1_0y5sa")
+
+[node name="Main" parent="." instance=ExtResource("1_xmg1o")]
+script = null
+
+[node name="Maid" parent="Main" index="1"]
+position = Vector2(-27, 253)
+
+[node name="Camera2D" parent="Main/Maid" index="3"]
+visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(129, 269)
+
+[editable path="Main"]
+[editable path="Main/Maid"]
+[editable path="Main/CanvasLayer/Control"]
+[editable path="Main/CanvasLayer/Control/Dig Time"]
