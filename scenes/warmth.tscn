@@ -11,10 +11,22 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_y3385")
+warmth_text = {
+"boiling": "There it is!!",
+"cold": "No.",
+"hot": "Closer!",
+"warm": "Perhaps..."
+}
+warmth_face = {
+"boiling": "joyous",
+"cold": "unamused",
+"hot": "jovial",
+"warm": "cant be helped"
+}
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
-offset_right = 83.0
+offset_right = 102.0
 offset_bottom = 24.0
 texture = ExtResource("1_7e6hm")
 stretch_mode = 4
@@ -31,4 +43,4 @@ label_settings = ExtResource("2_y3385")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(14, 13)
 sprite_frames = ExtResource("3_7e6hm")
-animation = &"jovial"
+animation = &"mirthful"

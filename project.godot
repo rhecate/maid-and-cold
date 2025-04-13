@@ -32,7 +32,6 @@ config/icon="res://assets/icon.svg"
 
 SignalBus="*res://scripts/SignalBus.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-Save="*res://addons/easy_saving/save.gd"
 
 [debug]
 

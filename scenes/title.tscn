@@ -33,25 +33,84 @@ label_settings = ExtResource("1_4ignj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Start or Load" type="VBoxContainer" parent="."]
 layout_mode = 2
 offset_left = 109.0
 offset_top = 147.0
 offset_right = 146.0
 offset_bottom = 199.0
 
-[node name="NewGame" type="Button" parent="VBoxContainer"]
+[node name="NewGame" type="Button" parent="Start or Load"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_wosw1")
 text = "start"
 
-[node name="LoadGame" type="Button" parent="VBoxContainer"]
+[node name="LoadGame" type="Button" parent="Start or Load"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_wosw1")
 text = "load
 "
 
-[connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/LoadGame" to="." method="_on_load_game_pressed"]
+[node name="SaveAlreadyExists" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 72.0
+offset_top = 105.0
+offset_right = 185.0
+offset_bottom = 214.0
+
+[node name="MarginContainer" type="MarginContainer" parent="SaveAlreadyExists"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Panel" type="Panel" parent="SaveAlreadyExists/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SaveAlreadyExists/MarginContainer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveAlreadyExists/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="SaveAlreadyExists/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "you already have
+a save game.
+
+begin anew?"
+label_settings = ExtResource("1_4ignj")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SaveAlreadyExists/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Yes" type="Button" parent="SaveAlreadyExists/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wosw1")
+text = "yes"
+flat = true
+
+[node name="No" type="Button" parent="SaveAlreadyExists/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wosw1")
+text = "no"
+flat = true
+
+[connection signal="pressed" from="Start or Load/NewGame" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Start or Load/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="SaveAlreadyExists/MarginContainer/VBoxContainer/HBoxContainer/Yes" to="." method="_on_save_exists_yes_pressed"]
+[connection signal="pressed" from="SaveAlreadyExists/MarginContainer/VBoxContainer/HBoxContainer/No" to="." method="_on_save_exists_no_pressed"]

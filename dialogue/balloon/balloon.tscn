@@ -95,7 +95,7 @@ text = "Response Example"
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Balloon"]
 position = Vector2(23, 162)
 sprite_frames = ExtResource("6_tkmol")
-animation = &"cant be helped"
+animation = &"mirthful"
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
