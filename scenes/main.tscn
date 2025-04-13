@@ -30,24 +30,24 @@ color = Color(0, 0, 0, 0)
 [node name="Control" parent="CanvasLayer" instance=ExtResource("3_85yof")]
 metadata/_edit_use_anchors_ = true
 
-[node name="Time Label" parent="CanvasLayer/Control" index="0"]
+[node name="Time Label" parent="CanvasLayer/Control" index="1"]
 visible = false
 
 [node name="Timer" parent="CanvasLayer/Control/Time Label" index="0"]
 wait_time = 60.0
 one_shot = true
 
-[node name="Item Count" parent="CanvasLayer/Control" index="1"]
+[node name="Item Count" parent="CanvasLayer/Control" index="2"]
 visible = false
 
-[node name="Warmth" parent="CanvasLayer/Control" index="2"]
+[node name="Warmth" parent="CanvasLayer/Control" index="3"]
 visible = false
 
-[node name="Dig Time" parent="CanvasLayer/Control" index="4"]
+[node name="Dig Time" parent="CanvasLayer/Control" index="5"]
 offset_left = 5.0
 offset_right = 256.0
 
-[node name="Warmth2" parent="CanvasLayer/Control" index="6"]
+[node name="Warmth2" parent="CanvasLayer/Control" index="7"]
 visible = false
 
 [node name="Room" parent="." instance=ExtResource("5_tbgi4")]
