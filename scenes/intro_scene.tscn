@@ -3,62 +3,9 @@
 [ext_resource type="Script" uid="uid://bu05ldtu4mwah" path="res://scripts/intro_scene.gd" id="1_0y5sa"]
 [ext_resource type="PackedScene" uid="uid://dresjlxwqlxkx" path="res://scenes/main.tscn" id="1_xmg1o"]
 
-[sub_resource type="Animation" id="Animation_0y5sa"]
-resource_name = "fillie_walks_in_the_door"
-length = 60.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ScenePlayer/Main/Maid:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(2.5, 3.49, 4.15856),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector2(-27, 253), Vector2(70, 253), Vector2(70, 253)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ScenePlayer/Main/Maid/AnimatedSprite2D")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(2.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [&"walk0", 0.5, false],
-"method": &"play"
-}]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("ScenePlayer/CanvasLayer/ColorRect:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.592445),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-39, 0), Vector2(-39, 20)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("ScenePlayer/CanvasLayer/ColorRect2:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.592445),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-39, 389), Vector2(-39, 369)]
-}
-
 [sub_resource type="Animation" id="Animation_gsw8x"]
-length = 0.001
+length = 60.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -74,7 +21,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ScenePlayer/CanvasLayer/ColorRect2:position")
+tracks/1/path = NodePath("ScenePlayer/Camera2D/ColorRect2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -86,7 +33,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ScenePlayer/CanvasLayer/ColorRect:position")
+tracks/2/path = NodePath("ScenePlayer/Camera2D/ColorRect:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -94,6 +41,101 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-39, 20)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ScenePlayer/Main/Maid/Camera2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(23.2667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ScenePlayer/Camera2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(129, 269)]
+}
+
+[sub_resource type="Animation" id="Animation_0y5sa"]
+resource_name = "fillie_walks_in_the_door"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScenePlayer/Main/Maid:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.5, 5.9, 13.2, 17.5333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-27, 253), Vector2(70, 253), Vector2(70, 253), Vector2(70, 451)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScenePlayer/Main/Maid/AnimatedSprite2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.5, 13.0333),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [&"walk0", 1.0, false],
+"method": &"play"
+}, {
+"args": [&"walk2", 0.5, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ScenePlayer/Camera2D/ColorRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.703354),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-170, -270), Vector2(-170, -250)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ScenePlayer/Camera2D/ColorRect2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(-0.0333333, 0, 0.703354),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-39, 389), Vector2(-168, 120), Vector2(-168, 100)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ScenePlayer/Camera2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.0333333, 13.4378, 18.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(129, 269), Vector2(129, 269), Vector2(129, 389)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gsw8x"]
@@ -110,23 +152,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_gsw8x")
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="ScenePlayer"]
-follow_viewport_enabled = true
-
-[node name="ColorRect" type="ColorRect" parent="ScenePlayer/CanvasLayer"]
-offset_left = -39.0
-offset_top = 20.0
-offset_right = 314.0
-offset_bottom = 169.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="ScenePlayer/CanvasLayer"]
-offset_left = -39.0
-offset_top = 389.0
-offset_right = 314.0
-offset_bottom = 538.0
-color = Color(0, 0, 0, 1)
-
 [node name="Main" parent="ScenePlayer" instance=ExtResource("1_xmg1o")]
 script = null
 
@@ -134,10 +159,9 @@ script = null
 position = Vector2(-27, 253)
 
 [node name="AnimatedSprite2D" parent="ScenePlayer/Main/Maid" index="0"]
-animation = &"walk0"
+animation = &"walk2"
 
 [node name="Camera2D" parent="ScenePlayer/Main/Maid" index="3"]
-visible = false
 enabled = false
 
 [node name="Dig Power" parent="ScenePlayer/Main/Maid" index="5"]
@@ -145,11 +169,36 @@ offset_left = 9.0
 offset_top = -18.0
 offset_right = 24.0
 offset_bottom = -2.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" parent="ScenePlayer/Main" index="2"]
+visible = false
+follow_viewport_enabled = true
+
+[node name="Thewatch" parent="ScenePlayer/Main/CanvasLayer/Control" index="0"]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="ScenePlayer"]
 position = Vector2(129, 269)
+
+[node name="ColorRect" type="ColorRect" parent="ScenePlayer/Camera2D"]
+z_index = 1
+offset_left = -39.0
+offset_top = 20.0
+offset_right = 314.0
+offset_bottom = 169.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ScenePlayer/Camera2D"]
+z_index = 1
+offset_left = -39.0
+offset_top = 389.0
+offset_right = 314.0
+offset_bottom = 538.0
+color = Color(0, 0, 0, 1)
 
 [editable path="ScenePlayer/Main"]
 [editable path="ScenePlayer/Main/Maid"]
 [editable path="ScenePlayer/Main/CanvasLayer/Control"]
 [editable path="ScenePlayer/Main/CanvasLayer/Control/Dig Time"]
+[editable path="ScenePlayer/Main/Room"]
