@@ -79,10 +79,10 @@ tracks/0/path = NodePath("ScenePlayer/Main/Maid:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.5, 5.9, 13.2, 17.5333),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(2.5, 5.9, 13.2, 14.8333, 15.2, 15.5333, 17.1667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-27, 253), Vector2(70, 253), Vector2(70, 253), Vector2(70, 451)]
+"values": [Vector2(-27, 253), Vector2(70, 253), Vector2(70, 253), Vector2(70, 451), Vector2(110, 451), Vector2(137, 411), Vector2(137, 118)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -91,13 +91,22 @@ tracks/1/path = NodePath("ScenePlayer/Main/Maid/AnimatedSprite2D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.5, 13.0333),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(2.5, 13.0333, 14.8398, 15.0333, 15.4333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "values": [{
 "args": [&"walk0", 1.0, false],
 "method": &"play"
 }, {
 "args": [&"walk2", 0.5, false],
+"method": &"play"
+}, {
+"args": [&"walk0", 0.5, false],
+"method": &"play"
+}, {
+"args": [&"walk7", 0.5, false],
+"method": &"play"
+}, {
+"args": [&"walk6", 0.5, false],
 "method": &"play"
 }]
 }
@@ -132,10 +141,10 @@ tracks/4/path = NodePath("ScenePlayer/Camera2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.0333333, 13.4378, 18.1),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0.0333333, 13.4378, 14.5667, 16.0333, 17.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(129, 269), Vector2(129, 269), Vector2(129, 389)]
+"values": [Vector2(129, 269), Vector2(129, 269), Vector2(129, 389), Vector2(129, 389), Vector2(129, 113)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gsw8x"]
@@ -159,7 +168,7 @@ script = null
 position = Vector2(-27, 253)
 
 [node name="AnimatedSprite2D" parent="ScenePlayer/Main/Maid" index="0"]
-animation = &"walk2"
+animation = &"walk7"
 
 [node name="Camera2D" parent="ScenePlayer/Main/Maid" index="3"]
 enabled = false
