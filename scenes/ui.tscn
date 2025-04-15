@@ -30,14 +30,15 @@ texture = ExtResource("3_p7vwb")
 
 [node name="Time Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 20.0
+offset_left = 19.0
 offset_top = 22.0
-offset_right = 32.0
+offset_right = 31.0
 offset_bottom = 50.0
 theme_override_font_sizes/font_size = 20
 text = "15
 "
 label_settings = ExtResource("5_wm3ai")
+horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="Time Label"]
 wait_time = 15.0

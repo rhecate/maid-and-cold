@@ -15,6 +15,7 @@ extends Node2D
 @onready var item_count_label = $"CanvasLayer/Control/Item Count"
 @onready var timer = $"CanvasLayer/Control/Time Label/Timer"
 @onready var time_label = $"CanvasLayer/Control/Time Label"
+@onready var time_clock = $CanvasLayer/Control/Thewatch
 @onready var game_over = $"CanvasLayer/Control/Game Over"
 @onready var warmth_status = $"CanvasLayer/Control/Warmth2"
 @onready var dig_time = $"CanvasLayer/Control/Dig Time"
@@ -211,6 +212,7 @@ func end_minigame() -> void:
 	
 	await get_tree().create_timer(1.0).timeout
 	dark_screen.visible = false
+	time_clock.visible = false
 	time_label.visible = false
 	item_count_label.visible = false
 	game_over.visible = false
@@ -221,6 +223,7 @@ func end_minigame() -> void:
 	
 func _on_play_the_game() -> void:
 		spawn_toy()
+		time_clock.visible = true
 		time_label.visible = true
 		item_count_label.visible = true
 		timer.start()

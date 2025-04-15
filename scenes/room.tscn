@@ -568,6 +568,7 @@ tile_map_data = PackedByteArray("AAD4/wYAAAAFAAkAAAD9/wYAAAAHAAkAAAD5/wYAAAAGAAk
 tile_set = SubResource("TileSet_qvc4m")
 
 [node name="Collisions" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions"]
 position = Vector2(31.5, 169)
@@ -607,6 +608,7 @@ position = Vector2(-82, 120)
 shape = SubResource("RectangleShape2D_jn645")
 
 [node name="RoomArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 4
 
@@ -615,6 +617,7 @@ position = Vector2(0, 138)
 shape = SubResource("RectangleShape2D_7dqbv")
 
 [node name="Toy Spawn Zone" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 collision_mask = 4
 
