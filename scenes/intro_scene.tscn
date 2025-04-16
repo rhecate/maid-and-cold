@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b4uko3pw8b7mm"]
 
-[ext_resource type="Script" uid="uid://bu05ldtu4mwah" path="res://scripts/intro_scene.gd" id="1_0y5sa"]
+[ext_resource type="Script" uid="uid://d6ou7p08ssq" path="res://scenes/intro_scene.gd" id="1_0y5sa"]
 [ext_resource type="PackedScene" uid="uid://dresjlxwqlxkx" path="res://scenes/main.tscn" id="1_xmg1o"]
 
 [sub_resource type="Animation" id="Animation_gsw8x"]
@@ -174,10 +174,6 @@ animation = &"walk7"
 enabled = false
 
 [node name="Dig Power" parent="ScenePlayer/Main/Maid" index="5"]
-offset_left = 9.0
-offset_top = -18.0
-offset_right = 24.0
-offset_bottom = -2.0
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" parent="ScenePlayer/Main" index="2"]
