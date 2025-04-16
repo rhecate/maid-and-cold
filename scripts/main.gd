@@ -42,6 +42,10 @@ var game_ending : bool = false
 
 func _ready() -> void:
 	_save = SaveGame.load_savegame() as SaveGame
+	maid.dig_power = _save.maid_stats.dig_power
+	maid.speed = _save.maid_stats.speed
+	maid.cooldown = _save.maid_stats.cooldown
+	maid.dig_label_update()
 	SignalBus.is_warm.connect(_on_is_warm)
 	SignalBus.is_hot.connect(_on_is_hot)
 	SignalBus.is_boiling.connect(_on_is_boiling)

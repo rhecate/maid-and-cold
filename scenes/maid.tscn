@@ -1,7 +1,6 @@
-[gd_scene load_steps=33 format=3 uid="uid://dkk7wmldv8pa0"]
+[gd_scene load_steps=32 format=3 uid="uid://dkk7wmldv8pa0"]
 
 [ext_resource type="Script" uid="uid://dmf8ounnodkds" path="res://scripts/maid.gd" id="1_nnbcx"]
-[ext_resource type="Resource" uid="uid://ig8kcppjsu8b" path="res://resources/maid_stats.tres" id="2_3pdd8"]
 [ext_resource type="Texture2D" uid="uid://ceq84tduxll5k" path="res://assets/sprites - characters/diggy.png" id="2_dq11l"]
 [ext_resource type="Texture2D" uid="uid://dj8xdwuy6mbkt" path="res://assets/sprites - characters/maidfinal-Sheet.png" id="2_h0s5p"]
 [ext_resource type="FontFile" uid="uid://dyrdo8dbwgaec" path="res://assets/fonts/lookout_7_v1/Lookout 7.ttf" id="4_1t7fq"]
@@ -297,7 +296,6 @@ _data = {
 
 [node name="Maid" type="CharacterBody2D"]
 script = ExtResource("1_nnbcx")
-maid_stats = ExtResource("2_3pdd8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jp5yk")

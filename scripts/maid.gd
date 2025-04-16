@@ -16,14 +16,9 @@ var current_animation : String
 
 var angle = 0
 
-@export var maid_stats : MaidStats
-
-@onready var speed = maid_stats.speed
-@onready var cooldown = maid_stats.cooldown
-@onready var dig_power = maid_stats.dig_power
-
-func _ready() -> void:
-	dig_number_label.text = str(dig_power)
+var speed
+var cooldown
+var dig_power
 
 
 func _unhandled_input(_event: InputEvent) -> void:
@@ -74,3 +69,5 @@ func dig():
 	if Input.is_action_just_pressed("ACTION"):
 		emit_signal("is_digging")
 		
+func dig_label_update():
+	dig_number_label.text = str(dig_power)
