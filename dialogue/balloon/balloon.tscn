@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_hfvdi"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_1j1j0"]
 [ext_resource type="StyleBox" uid="uid://bn7ueva43be4i" path="res://resources/stylebox/dialogue_box.tres" id="3_t3c2s"]
-[ext_resource type="SpriteFrames" uid="uid://cw8q7f1rrbwor" path="res://resources/palace_faces.tres" id="6_tkmol"]
+[ext_resource type="Texture2D" uid="uid://b07hpi01bsi4x" path="res://assets/sprites - characters/master big portrait.png" id="7_ev38r"]
 
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
@@ -42,6 +42,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 47.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -74,7 +75,7 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -42.0
+offset_left = -20.0
 offset_top = -218.0
 offset_right = 145.0
 offset_bottom = -50.0
@@ -92,10 +93,9 @@ script = ExtResource("3_1j1j0")
 layout_mode = 2
 text = "Response Example"
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Balloon"]
-position = Vector2(23, 162)
-sprite_frames = ExtResource("6_tkmol")
-animation = &"mirthful"
+[node name="Sprite2D" type="Sprite2D" parent="Balloon"]
+position = Vector2(28, 203)
+texture = ExtResource("7_ev38r")
 
 [connection signal="gui_input" from="Balloon" to="." method="_on_balloon_gui_input"]
 [connection signal="response_selected" from="Balloon/Responses/ResponsesMenu" to="." method="_on_responses_menu_response_selected"]
