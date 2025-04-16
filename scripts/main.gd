@@ -24,6 +24,8 @@ extends Node2D
 @onready var found_item_points = $"CanvasLayer/Control/Found Items/MarginContainer/VBoxContainer/HBox/Item Points Label"
 @onready var dark_screen = $CanvasLayer/ColorRect
 
+var _save : SaveGame
+
 var toy
 var item_depth: int = 0
 var warm : bool = false
@@ -39,6 +41,7 @@ var game_ending : bool = false
 
 
 func _ready() -> void:
+	_save = SaveGame.load_savegame() as SaveGame
 	SignalBus.is_warm.connect(_on_is_warm)
 	SignalBus.is_hot.connect(_on_is_hot)
 	SignalBus.is_boiling.connect(_on_is_boiling)
@@ -47,7 +50,9 @@ func _ready() -> void:
 	SignalBus.isnt_boiling.connect(_on_isnt_boiling)
 	SignalBus.found_item.connect(_on_found_item)
 	SignalBus.play_the_game.connect(_on_play_the_game)
-	DialogueManager.dialogue_ended.connect(_on_dialogue_finished) 
+	SignalBus.increase_power.connect(_on_increase_power)
+	SignalBus.save_the_game.connect(save_game)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_finished)
 
 
 func _physics_process(delta: float) -> void:
@@ -268,3 +273,11 @@ func _on_found_item():
 
 func _on_call_it_off() -> void:
 	end_minigame()
+
+
+func _on_increase_power():
+	_save.maid_stats.dig_power += 1
+	print(_save.maid_stats.dig_power)
+	
+func save_game():
+	_save.write_savegame()

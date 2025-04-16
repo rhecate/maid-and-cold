@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4uko3pw8b7mm"]
+[gd_scene load_steps=7 format=3 uid="uid://b4uko3pw8b7mm"]
 
 [ext_resource type="Script" uid="uid://d6ou7p08ssq" path="res://scenes/intro_scene.gd" id="1_0y5sa"]
 [ext_resource type="PackedScene" uid="uid://dresjlxwqlxkx" path="res://scenes/main.tscn" id="1_xmg1o"]
@@ -67,6 +67,92 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(129, 269)]
+}
+
+[sub_resource type="Animation" id="Animation_jkhwn"]
+resource_name = "fillie walks down the stairs"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ScenePlayer/Main/Maid:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.433367, 2.06667, 2.43337, 2.76667, 4.40007),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(70, 253), Vector2(70, 451), Vector2(110, 451), Vector2(137, 411), Vector2(137, 118)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ScenePlayer/Main/Maid/AnimatedSprite2D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.266667, 2.07317, 2.26667, 2.66667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [&"walk2", 0.5, false],
+"method": &"play"
+}, {
+"args": [&"walk0", 0.5, false],
+"method": &"play"
+}, {
+"args": [&"walk7", 0.5, false],
+"method": &"play"
+}, {
+"args": [&"walk6", 0.5, false],
+"method": &"play"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ScenePlayer/Camera2D/ColorRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-170, -250)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ScenePlayer/Camera2D/ColorRect2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-168, 100)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ScenePlayer/Camera2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.191601, 1.7, 3.1666, 4.3333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(129, 269), Vector2(129, 389), Vector2(129, 389), Vector2(129, 113)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 
 [sub_resource type="Animation" id="Animation_0y5sa"]
@@ -161,6 +247,7 @@ tracks/5/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gsw8x"]
 _data = {
 &"RESET": SubResource("Animation_gsw8x"),
+&"fillie walks down the stairs": SubResource("Animation_jkhwn"),
 &"fillie_walks_in_the_door": SubResource("Animation_0y5sa")
 }
 
@@ -185,32 +272,33 @@ animation = &"walk7"
 enabled = false
 
 [node name="Dig Power" parent="ScenePlayer/Main/Maid" index="5"]
+offset_left = 9.0
+offset_top = -18.0
+offset_right = 24.0
+offset_bottom = -2.0
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" parent="ScenePlayer/Main" index="2"]
 visible = false
 follow_viewport_enabled = true
 
-[node name="Thewatch" parent="ScenePlayer/Main/CanvasLayer/Control" index="0"]
-visible = false
-
 [node name="Camera2D" type="Camera2D" parent="ScenePlayer"]
 position = Vector2(129, 269)
 
 [node name="ColorRect" type="ColorRect" parent="ScenePlayer/Camera2D"]
 z_index = 1
-offset_left = -170.0
-offset_top = -250.0
-offset_right = 183.0
-offset_bottom = -101.0
+offset_left = -39.0
+offset_top = 20.0
+offset_right = 314.0
+offset_bottom = 169.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="ScenePlayer/Camera2D"]
 z_index = 1
-offset_left = -168.0
-offset_top = 100.0
-offset_right = 185.0
-offset_bottom = 249.0
+offset_left = -39.0
+offset_top = 389.0
+offset_right = 314.0
+offset_bottom = 538.0
 color = Color(0, 0, 0, 1)
 
 [editable path="ScenePlayer/Main"]

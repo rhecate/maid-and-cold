@@ -1,9 +1,17 @@
 ~ start
 Master Palace: Fillie.
-Master Palace: Clean this shit up.
-- yes master
-	Master Palace: Good.
-	do SignalBus.emit_play_the_game()
-- no
+Master Palace: What do you want.
+- look for item
+	Master Palace: Good. Get to it.
+	do SignalBus.emit_this("play_the_game")
+- increase my power
+	Master Palace: uh.. sure
+	do SignalBus.emit_this("increase_power")
+	=> END!
+- save progress
+	Master Palace: Sure.
+	do SignalBus.emit_this("save_the_game")
+	=> END
+- nothing...
 	Master Palace: ok. whatever
 => END

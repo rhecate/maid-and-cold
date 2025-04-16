@@ -15,13 +15,6 @@ position = Vector2(132, 61)
 [node name="Maid" parent="." instance=ExtResource("1_88gup")]
 y_sort_enabled = true
 position = Vector2(222, 122)
-speed = 150
-
-[node name="Dig Power" parent="Maid" index="5"]
-offset_left = 9.0
-offset_top = -18.0
-offset_right = 24.0
-offset_bottom = -2.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -67,7 +67,6 @@ time limit of 7 days (1 minigame round = 1 day)
 ~~~~~~~~~~~~~~~~~~~
 	- indicate cutscene is happening with vignette bars at top and bottom
 
-	- title screen
 	- opening scene
 	- save & load progress
 	- point accumulation

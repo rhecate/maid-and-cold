@@ -16,9 +16,11 @@ var current_animation : String
 
 var angle = 0
 
-@export var speed = 150
-@export var cooldown = 0.5
-@export var dig_power = 2
+@export var maid_stats : MaidStats
+
+@onready var speed = maid_stats.speed
+@onready var cooldown = maid_stats.cooldown
+@onready var dig_power = maid_stats.dig_power
 
 func _ready() -> void:
 	dig_number_label.text = str(dig_power)
