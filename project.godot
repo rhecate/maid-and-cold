@@ -24,7 +24,7 @@ resources_spreadsheet_view/freeze_first_column=true
 [application]
 
 config/name="maid hot n cold"
-run/main_scene="uid://dresjlxwqlxkx"
+run/main_scene="uid://co271gq62pppc"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
