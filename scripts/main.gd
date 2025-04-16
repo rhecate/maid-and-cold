@@ -45,7 +45,6 @@ func _ready() -> void:
 	maid.dig_power = _save.maid_stats.dig_power
 	maid.speed = _save.maid_stats.speed
 	maid.cooldown = _save.maid_stats.cooldown
-	maid.dig_label_update()
 	SignalBus.is_warm.connect(_on_is_warm)
 	SignalBus.is_hot.connect(_on_is_hot)
 	SignalBus.is_boiling.connect(_on_is_boiling)
@@ -58,6 +57,8 @@ func _ready() -> void:
 	SignalBus.save_the_game.connect(save_game)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_finished)
 
+func _process(delta: float) -> void:
+	maid.dig_label_update()
 
 func _physics_process(delta: float) -> void:
 	

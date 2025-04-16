@@ -71,7 +71,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_jkhwn"]
 resource_name = "fillie walks down the stairs"
-length = 60.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -157,7 +157,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_0y5sa"]
 resource_name = "fillie_walks_in_the_door"
-length = 60.0
+length = 8.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -165,10 +165,10 @@ tracks/0/path = NodePath("ScenePlayer/Main/Maid:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.5, 5.9, 13.2, 14.8333, 15.2, 15.5333, 17.1667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(2.5, 5.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-27, 253), Vector2(70, 253), Vector2(70, 253), Vector2(70, 451), Vector2(110, 451), Vector2(137, 411), Vector2(137, 118)]
+"values": [Vector2(-27, 253), Vector2(70, 253)]
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -177,22 +177,10 @@ tracks/1/path = NodePath("ScenePlayer/Main/Maid/AnimatedSprite2D")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.5, 13.0333, 14.8398, 15.0333, 15.4333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
 "values": [{
 "args": [&"walk0", 1.0, false],
-"method": &"play"
-}, {
-"args": [&"walk2", 0.5, false],
-"method": &"play"
-}, {
-"args": [&"walk0", 0.5, false],
-"method": &"play"
-}, {
-"args": [&"walk7", 0.5, false],
-"method": &"play"
-}, {
-"args": [&"walk6", 0.5, false],
 "method": &"play"
 }]
 }
@@ -227,10 +215,10 @@ tracks/4/path = NodePath("ScenePlayer/Camera2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.0333333, 13.4378, 14.5667, 16.0333, 17.2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.0333333),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(129, 269), Vector2(129, 269), Vector2(129, 389), Vector2(129, 389), Vector2(129, 113)]
+"values": [Vector2(129, 269)]
 }
 tracks/5/type = "method"
 tracks/5/imported = false
@@ -287,18 +275,18 @@ position = Vector2(129, 269)
 
 [node name="ColorRect" type="ColorRect" parent="ScenePlayer/Camera2D"]
 z_index = 1
-offset_left = -39.0
-offset_top = 20.0
-offset_right = 314.0
-offset_bottom = 169.0
+offset_left = -170.0
+offset_top = -250.0
+offset_right = 183.0
+offset_bottom = -101.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="ScenePlayer/Camera2D"]
 z_index = 1
-offset_left = -39.0
-offset_top = 389.0
-offset_right = 314.0
-offset_bottom = 538.0
+offset_left = -168.0
+offset_top = 100.0
+offset_right = 185.0
+offset_bottom = 249.0
 color = Color(0, 0, 0, 1)
 
 [editable path="ScenePlayer/Main"]
