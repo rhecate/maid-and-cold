@@ -65,16 +65,14 @@ time limit of 7 days (1 minigame round = 1 day)
 ~~~~~~~~~~~~~~~~~~~
 ~      TO DO      ~
 ~~~~~~~~~~~~~~~~~~~
-	- indicate cutscene is happening with vignette bars at top and bottom
-
+	- spruce up item count indicator
 	- opening scene
-	- save & load progress
 	- point accumulation
 	- dig power up
-
+	- popups for bonus time
+	- add more items
 
 	- reward scene framework
 	- punishment scene framework
 	- day counter
 	- ending scene
-	- add more items
