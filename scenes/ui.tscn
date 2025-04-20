@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bjiwn255sl2hg"]
+[gd_scene load_steps=18 format=3 uid="uid://bjiwn255sl2hg"]
 
 [ext_resource type="Script" uid="uid://cv3seynvjnybu" path="res://scripts/ui.gd" id="1_srplv"]
 [ext_resource type="Resource" uid="uid://bvc5nayg28xx1" path="res://resources/items/item_list.tres" id="2_yev5y"]
@@ -7,6 +7,18 @@
 [ext_resource type="StyleBox" uid="uid://ckjlp8as4uorf" path="res://resources/stylebox/popup stylebox.tres" id="5_ktti3"]
 [ext_resource type="LabelSettings" uid="uid://lwqxwifxd0a0" path="res://resources/default label setting.tres" id="5_wm3ai"]
 [ext_resource type="PackedScene" uid="uid://b6yfhqe42kbe" path="res://scenes/warmth.tscn" id="6_8dubc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7vwb"]
+bg_color = Color(0.270588, 0.156863, 0.192157, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.701961, 0.458824, 0.278431, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="LabelSettings" id="LabelSettings_h1mc3"]
 line_spacing = -4.0
@@ -86,15 +98,29 @@ horizontal_alignment = 1
 [node name="Timer" type="Timer" parent="Time Label"]
 wait_time = 15.0
 
-[node name="Item Count" type="Label" parent="."]
+[node name="Item Count" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 240.0
-offset_top = 201.0
-offset_right = 256.0
-offset_bottom = 217.0
+offset_left = 232.0
+offset_top = 209.0
+offset_right = 253.0
+offset_bottom = 238.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p7vwb")
+
+[node name="CenterContainer" type="CenterContainer" parent="Item Count"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.113
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 15.627
+offset_bottom = 25.0
+
+[node name="Item Count" type="Label" parent="Item Count/CenterContainer"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "1"
 label_settings = ExtResource("5_wm3ai")
+horizontal_alignment = 1
 
 [node name="Game Over" type="Label" parent="."]
 visible = false
@@ -110,6 +136,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Dig Time" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 76.0
 offset_top = 75.0
 offset_right = 179.0

@@ -12,7 +12,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_y3385")
 warmth_text = {
-"boiling": "There it is!!",
+"boiling": "There!!",
 "cold": "No.",
 "hot": "Closer!",
 "warm": "Perhaps..."
@@ -26,7 +26,7 @@ warmth_face = {
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
-offset_right = 102.0
+offset_right = 106.0
 offset_bottom = 24.0
 texture = ExtResource("1_7e6hm")
 stretch_mode = 4

@@ -12,6 +12,7 @@ extends Node2D
 @onready var maid_animation = $Maid/AnimationPlayer
 @onready var animaid = $Maid/AnimatedSprite2D
 @onready var ui = $CanvasLayer/Control
+@onready var item_count_panel = $"CanvasLayer/Control/Item Count"
 @onready var item_count_label = $"CanvasLayer/Control/Item Count"
 @onready var timer = $"CanvasLayer/Control/Time Label/Timer"
 @onready var time_label = $"CanvasLayer/Control/Time Label"
@@ -37,7 +38,7 @@ var gotten_items_list := []
 var item_name : String
 var item_points : int
 var game_ending : bool = false
-
+var round_points : int = 0
 
 
 func _ready() -> void:
@@ -45,6 +46,7 @@ func _ready() -> void:
 	maid.dig_power = _save.maid_stats.dig_power
 	maid.speed = _save.maid_stats.speed
 	maid.cooldown = _save.maid_stats.cooldown
+	maid.total_points = _save.maid_stats.total_points
 	SignalBus.is_warm.connect(_on_is_warm)
 	SignalBus.is_hot.connect(_on_is_hot)
 	SignalBus.is_boiling.connect(_on_is_boiling)
@@ -154,6 +156,7 @@ func _on_maid_digging_item() -> void:
 		print(gotten_items)
 		gotten_items_list.append(ui.linked_item.name)
 		print(gotten_items_list)
+		round_points += ui.linked_item.points
 		
 		found_item_name.text = ui.linked_item.name
 		found_item_points.text = str(ui.linked_item.points)
@@ -207,6 +210,9 @@ func end_minigame() -> void:
 	maid.minigame_time = false
 	maid.digging_time = false
 	dig_time.visible = false
+	_save.maid_stats.total_points += round_points
+	print(_save.maid_stats.total_points)
+	#_save.write_savegame()
 	
 	await get_tree().create_timer(2.0).timeout
 	
@@ -227,6 +233,8 @@ func end_minigame() -> void:
 	item_count_label.visible = false
 	game_over.visible = false
 	gotten_items_list.clear()
+	round_points = 0
+	ui.item_count = 0
 	maid.set_physics_process(true)
 	game_ending = false
 	
@@ -235,7 +243,7 @@ func _on_play_the_game() -> void:
 		spawn_toy()
 		time_clock.visible = true
 		time_label.visible = true
-		item_count_label.visible = true
+		item_count_panel.visible = true
 		timer.start()
 		maid.minigame_time = true
 	

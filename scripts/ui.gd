@@ -3,7 +3,7 @@ class_name UI
 
 @onready var time_label = $"Time Label"
 @onready var timer = $"Time Label/Timer"
-@onready var item_count_label = $"Item Count"
+@onready var item_count_label = $"Item Count/CenterContainer/Item Count"
 @onready var dig_time = $"Dig Time"
 @onready var dig_item = $"Dig Time/MarginContainer/Dig Time/Item Name"
 @onready var dig_depth = $"Dig Time/MarginContainer/Dig Time/HBoxContainer/Item Depth"

@@ -157,7 +157,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_0y5sa"]
 resource_name = "fillie_walks_in_the_door"
-length = 8.0
+length = 6.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -260,37 +260,35 @@ animation = &"walk7"
 enabled = false
 
 [node name="Dig Power" parent="ScenePlayer/Main/Maid" index="5"]
-offset_left = 9.0
-offset_top = -18.0
-offset_right = 24.0
-offset_bottom = -2.0
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" parent="ScenePlayer/Main" index="2"]
 visible = false
 follow_viewport_enabled = true
 
+[node name="Dig Time" parent="ScenePlayer/Main/CanvasLayer/Control" index="4"]
+offset_top = 0.0
+
 [node name="Camera2D" type="Camera2D" parent="ScenePlayer"]
 position = Vector2(129, 269)
 
 [node name="ColorRect" type="ColorRect" parent="ScenePlayer/Camera2D"]
 z_index = 1
-offset_left = -170.0
-offset_top = -250.0
-offset_right = 183.0
-offset_bottom = -101.0
+offset_left = -39.0
+offset_top = 20.0
+offset_right = 314.0
+offset_bottom = 169.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="ScenePlayer/Camera2D"]
 z_index = 1
-offset_left = -168.0
-offset_top = 100.0
-offset_right = 185.0
-offset_bottom = 249.0
+offset_left = -39.0
+offset_top = 389.0
+offset_right = 314.0
+offset_bottom = 538.0
 color = Color(0, 0, 0, 1)
 
 [editable path="ScenePlayer/Main"]
 [editable path="ScenePlayer/Main/Maid"]
 [editable path="ScenePlayer/Main/CanvasLayer/Control"]
-[editable path="ScenePlayer/Main/CanvasLayer/Control/Dig Time"]
 [editable path="ScenePlayer/Main/Room"]

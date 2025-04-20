@@ -4,17 +4,17 @@ extends Control
 @onready var label = $Label
 
 @export var warmth_text = {
-	"cold" : "No.",
-	"warm" : "Perhaps..",
-	"hot" : "Ooh, maybe...",
-	"boiling" : "There it is!!"
+	"cold" : "",
+	"warm" : "",
+	"hot" : "",
+	"boiling" : ""
 }
 
 @export var warmth_face = {
-	"cold" : "unamused",
-	"warm" : "jovial",
-	"hot" : "mirthful",
-	"boiling" : "joyous"
+	"cold" : "",
+	"warm" : "",
+	"hot" : "",
+	"boiling" : ""
 }
 
 func warmth_update(warmth : String):

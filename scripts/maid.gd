@@ -19,7 +19,7 @@ var angle = 0
 var speed
 var cooldown
 var dig_power
-
+var total_points
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if minigame_time == false:
