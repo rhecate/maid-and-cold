@@ -4,10 +4,12 @@ Master Palace: What do you want.
 - look for item
 	Master Palace: Good. Get to it.
 	do SignalBus.emit_this("play_the_game")
-- increase my power
-	Master Palace: uh.. sure
-	do SignalBus.emit_this("increase_power")
-	=> END!
+- tell me my points
+	Master Palace: you have {{_save.maid_stats.total_points}}
+#- increase my power
+#	Master Palace: uh.. sure
+#	do SignalBus.emit_this("increase_power")
+#	=> END!
 - save progress
 	Master Palace: Sure.
 	do SignalBus.emit_this("save_the_game")

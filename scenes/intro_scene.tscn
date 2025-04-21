@@ -274,18 +274,18 @@ position = Vector2(129, 269)
 
 [node name="ColorRect" type="ColorRect" parent="ScenePlayer/Camera2D"]
 z_index = 1
-offset_left = -39.0
-offset_top = 20.0
-offset_right = 314.0
-offset_bottom = 169.0
+offset_left = -170.0
+offset_top = -250.0
+offset_right = 183.0
+offset_bottom = -101.0
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="ScenePlayer/Camera2D"]
 z_index = 1
-offset_left = -39.0
-offset_top = 389.0
-offset_right = 314.0
-offset_bottom = 538.0
+offset_left = -168.0
+offset_top = 100.0
+offset_right = 185.0
+offset_bottom = 249.0
 color = Color(0, 0, 0, 1)
 
 [editable path="ScenePlayer/Main"]

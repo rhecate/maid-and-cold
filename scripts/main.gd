@@ -7,7 +7,7 @@ extends Node2D
 @onready var roomspace = $Room/RoomArea/CollisionShape2D
 @onready var roomsize = roomspace.shape.get_rect().size
 @onready var roomorigin = roomspace.global_position - roomsize
-@onready var maid = $Maid
+@onready var maid : Maid = $Maid
 @onready var maid_timer = $Maid/Timer
 @onready var maid_animation = $Maid/AnimationPlayer
 @onready var animaid = $Maid/AnimatedSprite2D
@@ -47,6 +47,7 @@ func _ready() -> void:
 	maid.speed = _save.maid_stats.speed
 	maid.cooldown = _save.maid_stats.cooldown
 	maid.total_points = _save.maid_stats.total_points
+	print(_save.maid_stats.total_points)
 	SignalBus.is_warm.connect(_on_is_warm)
 	SignalBus.is_hot.connect(_on_is_hot)
 	SignalBus.is_boiling.connect(_on_is_boiling)
@@ -198,6 +199,7 @@ func _on_maid_digging_item() -> void:
 	
 func end_minigame() -> void:
 	game_ending = true
+	maid.minigame_time = false
 	maid.set_physics_process(false)
 	dark_screen.visible = true
 	var tween = create_tween()
@@ -207,12 +209,11 @@ func end_minigame() -> void:
 	if get_tree().get_root().has_node("Main/toy"):
 		toy.queue_free()
 	game_over.visible = true
-	maid.minigame_time = false
 	maid.digging_time = false
 	dig_time.visible = false
 	_save.maid_stats.total_points += round_points
 	print(_save.maid_stats.total_points)
-	#_save.write_savegame()
+	_save.write_savegame()
 	
 	await get_tree().create_timer(2.0).timeout
 	
