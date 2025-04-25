@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="SaveGame" load_steps=2 format=3 uid="uid://b1x3uhxycioof"]
-
-[ext_resource type="Script" uid="uid://dceq5h0mjp8ub" path="res://scripts/SaveGame.gd" id="1_lhbgx"]
-
-[resource]
-script = ExtResource("1_lhbgx")
-saw_intro = false
-metadata/_custom_type_script = "uid://dceq5h0mjp8ub"

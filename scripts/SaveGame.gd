@@ -1,7 +1,7 @@
 extends Resource
 class_name SaveGame
 
-const SAVE_GAME_PATH := "user://savegame.tres"
+const SAVE_GAME_PATH := "user://savegame.res"
 
 @export var maid_stats : MaidStats
 @export var saw_intro : bool = false

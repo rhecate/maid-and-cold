@@ -5,4 +5,4 @@ class_name MaidStats
 @export var cooldown : float = 0.5
 @export var speed : int = 150
 
-var total_points : int
+@export var total_points : int

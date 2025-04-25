@@ -295,3 +295,4 @@ func _on_increase_power():
 	
 func save_game():
 	_save.write_savegame()
+	print("game saved")
